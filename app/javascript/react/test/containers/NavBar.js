@@ -1,11 +1,11 @@
-import BoozeYourself from '../src/BoozeYourself';
+import NavBar from '../../src/containers/NavBar'
 
-describe('BoozeYourself', () => {
+describe('NavBar', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <BoozeYourself />
+      <NavBar />
     )
   })
 
@@ -29,4 +29,5 @@ describe('BoozeYourself', () => {
   it('should render an anchor tag with text Sign In', () => {
     expect(wrapper.find('a').at(3).text()).toEqual('Sign In')
   })
+
 })
