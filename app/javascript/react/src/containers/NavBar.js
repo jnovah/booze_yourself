@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const NavBar = props => {
   return(
-    <div>
+    <div className="top-bar">
       <Router>
         <Link to='/'>Booze Yourself</Link>
       </Router>
