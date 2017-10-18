@@ -8,6 +8,7 @@ const NavBar = props => {
       <Router>
         <Link to='/'>Booze Yourself</Link>
       </Router>
+<<<<<<< HEAD
       <Switch>
         <Link to='/beers'>Beers</Link>
       </Switch>
@@ -15,6 +16,8 @@ const NavBar = props => {
         <Link to='/breweries'>Breweries</Link>
       </Router>
       <a href='/users/sign_in'>Sign In</a>
+=======
+>>>>>>> 0f801766cfc0dad0609813a525a98cfe8ac088a5
     </div>
 
 

@@ -11,12 +11,17 @@ describe('NavBar', () => {
 
   it('should render five a elements', () => {
     expect(wrapper.find('a')).toBePresent()
+<<<<<<< HEAD
     expect(wrapper.find('a').length).toEqual(5)
+=======
+    expect(wrapper.find('a').length).toEqual(1)
+>>>>>>> 0f801766cfc0dad0609813a525a98cfe8ac088a5
   })
 
   it('should render an anchor tag with text Booze Yourself', () => {
     expect(wrapper.find('a').at(0).text()).toEqual('Booze Yourself')
   })
+<<<<<<< HEAD
 
   it('should render an anchor tag with text Beers', () => {
     expect(wrapper.find('a').at(1).text()).toEqual('Beers')
@@ -34,4 +39,6 @@ describe('NavBar', () => {
     expect(wrapper.find('a').at(4).text()).toEqual('Home')
   })
 
+=======
+>>>>>>> 0f801766cfc0dad0609813a525a98cfe8ac088a5
 })

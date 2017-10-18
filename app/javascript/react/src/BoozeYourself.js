@@ -13,6 +13,7 @@ class BoozeYourself extends Component {
 
   render(){
     return(
+<<<<<<< HEAD:app/javascript/react/src/boozeYourself.js
     <div>
       <Router>
         <Route path='/' component={NavBar} />
@@ -20,6 +21,10 @@ class BoozeYourself extends Component {
 
       <Router>
         <Route  path='/' component={Home} />
+=======
+      <Router>
+        <Route path='/' component={NavBar} />
+>>>>>>> 0f801766cfc0dad0609813a525a98cfe8ac088a5:app/javascript/react/src/BoozeYourself.js
       </Router>
     </div>
 
