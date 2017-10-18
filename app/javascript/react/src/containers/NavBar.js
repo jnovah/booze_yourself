@@ -8,13 +8,6 @@ const NavBar = props => {
       <Router>
         <Link to='/'>Booze Yourself</Link>
       </Router>
-      <Router>
-        <Link to='/beers'>Beers</Link>
-      </Router>
-      <Router>
-        <Link to='/breweries'>Breweries</Link>
-      </Router>
-      <a href='/users/sign_in'>Sign In</a>
     </div>
 
   )

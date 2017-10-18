@@ -1,19 +1,20 @@
 import BoozeYourself from '../src/BoozeYourself';
 
 describe('BoozeYourself', () => {
-let wrapper;
+  let wrapper;
 
-beforeEach(() => {
-wrapper = mount(
-<BoozeYourself />
-)
-})
+  beforeEach(() => {
+    wrapper = mount(
+      <BoozeYourself />
+    )
+  })
 
-it('should render h1 tag', () => {
-expect(wrapper.find('h1')).toBePresent()
-})
+  it('should render four a elements', () => {
+    expect(wrapper.find('a')).toBePresent()
+    expect(wrapper.find('a').length).toEqual(1)
+  })
 
-it('should render h1 tag with text Hello from the react front end', () => {
-expect(wrapper.find('h1').text()).toBe('Hello from the react front end')
-})
+  it('should render an anchor tag with text Booze Yourself', () => {
+    expect(wrapper.find('a').at(0).text()).toEqual('Booze Yourself')
+  })
 })
