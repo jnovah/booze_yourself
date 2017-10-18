@@ -3,6 +3,7 @@
 
 module.exports = function(config) {
   config.set({
+<<<<<<< HEAD
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -65,6 +66,32 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
+=======
+    basePath: '',
+    frameworks: ['jasmine'],
+    files: [
+      'app/javascript/react/test/testHelper.js'
+    ],
+    exclude: [
+    ],
+    preprocessors: {
+      'app/javascript/react/test/testHelper.js': ['webpack']
+    },
+    reporters: ['progress'],
+
+    port: 9876,
+
+    colors: true,
+
+    logLevel: config.LOG_INFO,
+
+    autoWatch: true,
+
+    browsers: ['PhantomJS'],
+
+    singleRun: false,
+    
+>>>>>>> ffb635117678a0548736569aaad40c1af2a7edc3
     concurrency: Infinity,
     webpack: {
       module: {
@@ -83,6 +110,10 @@ module.exports = function(config) {
         'react/lib/ReactContext': 'react',
         'react-addons-test-utils': 'react-dom',
       }
+<<<<<<< HEAD
     }    
+=======
+    }
+>>>>>>> ffb635117678a0548736569aaad40c1af2a7edc3
   })
 }
