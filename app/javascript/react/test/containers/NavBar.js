@@ -1,11 +1,11 @@
-import BoozeYourself from '../src/BoozeYourself';
+import NavBar from '../../src/containers/NavBar'
 
-describe('BoozeYourself', () => {
+describe('NavBar', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <BoozeYourself />
+      <NavBar />
     )
   })
 

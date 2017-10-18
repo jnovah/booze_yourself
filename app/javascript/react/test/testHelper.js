@@ -5,6 +5,11 @@ import { mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import createRouterContext from 'react-router-test-context';
+import { shallow } from 'enzyme';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 
 Object.assign(global, {
   mount,
@@ -17,6 +22,9 @@ configure({ adapter: new Adapter() });
 beforeEach(() => {
   jasmineEnzyme();
 })
+
+const context = createRouterContext()
+
 
 // function to require all modules for a given context
 let requireAll = requireContext => {
