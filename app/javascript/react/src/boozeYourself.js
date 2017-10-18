@@ -12,11 +12,8 @@ class BoozeYourself extends Component {
 
   render(){
     return(
-
       <Router>
-
         <Route path='/' component={NavBar} />
-
       </Router>
 
     )
