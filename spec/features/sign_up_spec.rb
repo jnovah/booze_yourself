@@ -4,6 +4,8 @@ feature  'i want to be able to sign up' do
   scenario "user clicks on the submit button" do
     visit new_user_registration_path
     click_button 'Sign up'
+  end
+end
 
 feature  'i want to be able to sign up' do
  scenario "user clicks on the submit button" do
