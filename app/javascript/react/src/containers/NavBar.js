@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Switch } from 'react-router-dom'
 
 const NavBar = props => {
   return(
@@ -8,9 +8,9 @@ const NavBar = props => {
       <Router>
         <Link to='/'>Booze Yourself</Link>
       </Router>
-      <Router>
+      <Switch>
         <Link to='/beers'>Beers</Link>
-      </Router>
+      </Switch>
       <Router>
         <Link to='/breweries'>Breweries</Link>
       </Router>
