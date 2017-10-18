@@ -1,5 +1,5 @@
 source 'https://rubygems.org/'
-
+gem 'devise'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -20,6 +20,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
+
 end
 
 group :test do
