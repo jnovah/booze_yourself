@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-// import BackButton from './BackButton'
 
 const NavBar = props => {
   return(
+    <div>
     <div className="top-bar">
       <Router>
         <Link to='/'>Booze Yourself</Link>
@@ -16,6 +16,14 @@ const NavBar = props => {
       </Router>
       <a href='/users/sign_in'>Sign In</a>
     </div>
+
+
+    <ul className="breadcrumbs">
+      <Router>
+      <li><Link to="/">Home</Link></li>
+      </Router>
+    </ul>
+  </div>
 
   )
 }

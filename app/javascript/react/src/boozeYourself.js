@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './containers/NavBar'
+import Home from './containers/Home'
 
 class BoozeYourself extends Component {
   constructor(props) {
@@ -12,12 +13,15 @@ class BoozeYourself extends Component {
 
   render(){
     return(
+    <div>
+      <Router>
+        <Route path='/' component={NavBar} />
+      </Router>
 
       <Router>
-
-        <Route path='/' component={NavBar} />
-
+        <Route  path='/' component={Home} />
       </Router>
+    </div>
 
     )
   }
