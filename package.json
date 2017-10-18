@@ -9,14 +9,10 @@
     "enzyme-adapter-react-16": "^1.0.2",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
-<<<<<<< HEAD
-    "react-dom": "^16.0.0"
-=======
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-test-context": "^0.1.0"
->>>>>>> aa5a89f304da0496fd3d6aca928c3b191f144ec9
   },
   "devDependencies": {
     "jasmine-core": "^2.8.0",
