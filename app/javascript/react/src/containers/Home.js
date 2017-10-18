@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import NewestBeersTile from '../Components/NewestBeersTile'
+import TopBeersTile from '../Components/TopBeersTile'
 
 class Home extends Component {
   constructor(props) {
@@ -16,12 +18,17 @@ class Home extends Component {
         <div>
           <ul>
             <input type='search' placeholder='Search'></input>
-            <button class='button' type='button'>Search</button>
+            <button className='button' type='button'>Search</button>
           </ul>
         </div>
 
         <div className='top-beers'>
-          <Beers
+          <TopBeersTile
+          beerName={this.state.beerName}
+          brewery={this.state.brewery}
+          rating={this.state.rating}
+          />
+          <NewestBeersTile
           beerName={this.state.beerName}
           brewery={this.state.brewery}
           rating={this.state.rating}

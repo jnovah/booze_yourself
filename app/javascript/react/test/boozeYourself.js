@@ -9,9 +9,9 @@ describe('BoozeYourself', () => {
     )
   })
 
-  it('should render four a elements', () => {
+  it('should render five a elements', () => {
     expect(wrapper.find('a')).toBePresent()
-    expect(wrapper.find('a').length).toEqual(4)
+    expect(wrapper.find('a').length).toEqual(5)
   })
 
   it('should render an anchor tag with text Booze Yourself', () => {
@@ -28,5 +28,9 @@ describe('BoozeYourself', () => {
 
   it('should render an anchor tag with text Sign In', () => {
     expect(wrapper.find('a').at(3).text()).toEqual('Sign In')
+  })
+
+  it('should render an anchor tag with text Home', () => {
+    expect(wrapper.find('a').at(4).text()).toEqual('Home')
   })
 })
