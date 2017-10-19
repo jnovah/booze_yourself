@@ -16,37 +16,24 @@ class Home extends Component {
 
   }
   render(){
-    let beers = this.state.beers.map(beer => {
-
 
     return(
-
-        <div className='top-beers'>
+      <div>
+        <div>
+          <ul>
+            <input type='search' placeholder='Search'></input>
+            <button className='button' type='button'>Search</button>
+          </ul>
+        </div>
+        <div>
           <TopBeersTile
-          beerName={this.state.beerName}
-          brewery={this.state.brewery}
-          rating={this.state.rating}
-          />
-          <NewestBeersTile
-          beerName={this.state.beerName}
-          brewery={this.state.brewery}
-          rating={this.state.rating}
+            beers={this.state.beers}
           />
         </div>
-      // </div>
-    )
-  })
-    return(
-      
-       <div>
-         <div>
-           <ul>
-             <input type='search' placeholder='Search'></input>
-             <button className='button' type='button'>Search</button>
-           </ul>
-         </div>
         <div>
-          {beers}
+          <NewestBeersTile
+            beers={this.state.beers}
+          />
         </div>
       </div>
     )

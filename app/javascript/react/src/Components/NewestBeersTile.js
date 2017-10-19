@@ -1,6 +1,15 @@
 import React from 'react'
 
 const NewestBeersTile = props => {
+  let beers = props.beers.map(beer => {
+    return(
+        <tr>
+          <td>{beer.beerName}</td>
+          <td>{beer.brewery}</td>
+          <td>{beer.rating}</td>
+        </tr>
+    )
+  })
   return(
     <div>
       Newest Beers
@@ -14,11 +23,7 @@ const NewestBeersTile = props => {
         </thead>
 
         <tbody>
-          <tr>
-            <td>{props.beerName}</td>
-            <td>{props.brewery}</td>
-            <td>{props.rating}</td>
-          </tr>
+          {beers}
         </tbody>
       </table>
     </div>

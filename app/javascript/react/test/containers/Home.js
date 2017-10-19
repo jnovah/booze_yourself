@@ -1,21 +1,25 @@
 import Home from '../../src/containers/Home'
 import TopBeersTile from '../../src/Components/TopBeersTile'
 import NewestBeersTile from '../../src/Components/NewestBeersTile'
+import { shallow, mount, render } from 'enzyme';
 
 describe('Home', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = shallow(
       <Home />
     )
   })
 
   it('should have a specified initial state', () => {
     expect(wrapper.state()).toEqual({
-      beerName: "Bud Light",
-      brewery: "Busch",
-      rating: 2
+      beers:[
+        {beerName: "Bud Light",
+        brewery: "Busch",
+        rating: 2}, {beerName: "Bud",
+        brewery: "Busch",
+        rating: 2}]
     })
   })
 
