@@ -4,5 +4,5 @@ class Beer < ApplicationRecord
   # belongs_to :user
   # belongs_to :brewery
   # belongs_to :availability
-  belongs_to :type
+  belongs_to :type, presence: true
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 beer = FactoryGirl.create(:beer)
-type = FactoryGirl.create(:type)
+# type = FactoryGirl.create(:type)
 
 RSpec.describe Beer do
   it "has a name, description, abv, avg_score, and ids for user, brewery, type, and availability" do
