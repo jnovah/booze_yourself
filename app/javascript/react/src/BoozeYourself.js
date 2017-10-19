@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './containers/NavBar'
 import Home from './containers/Home'
+import BeersIndex from './Components/BeersIndex'
 
 class BoozeYourself extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class BoozeYourself extends Component {
       <main>
         <NavBar />
         <Switch>
-          <Route  path='/' exact component={Home} key={1}/>
+          <Route path='/' exact component={Home} key={1} />
+          <Route path='/beers' component={BeersIndex} key={2} />
         </Switch>
       </main>
     </div>

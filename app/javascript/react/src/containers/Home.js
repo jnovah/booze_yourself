@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import NewestBeersTile from '../Components/NewestBeersTile'
 import TopBeersTile from '../Components/TopBeersTile'
+import BeersIndex from '../Components/BeersIndex'
+import { Route, Switch } from 'react-router-dom';
+
 
 class Home extends Component {
   constructor(props) {
@@ -18,7 +21,8 @@ class Home extends Component {
   render(){
 
     return(
-      <div>
+
+      <div className='row'>
         <div>
           <ul>
             <input type='search' placeholder='Search'></input>
@@ -26,14 +30,16 @@ class Home extends Component {
           </ul>
         </div>
         <div>
-          <TopBeersTile
-            beers={this.state.beers}
-          />
-        </div>
-        <div>
-          <NewestBeersTile
-            beers={this.state.beers}
-          />
+          <div className='small-6 columns top-beer'>
+            <TopBeersTile
+              beers={this.state.beers}
+            />
+          </div>
+          <div className='small-6 columns new-beer'>
+            <NewestBeersTile
+              beers={this.state.beers}
+            />
+          </div>
         </div>
       </div>
     )
