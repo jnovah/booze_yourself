@@ -1,27 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, NavLink } from 'react-router-dom'
 
 const NavBar = props => {
   return(
     <div>
-    <div className="top-bar">
-      <Router>
-        <Link to='/'>Booze Yourself</Link>
-      </Router>
-      <Switch>
-        <Link to='/beers'>Beers</Link>
-      </Switch>
-      <Router>
-        <Link to='/breweries'>Breweries</Link>
-      </Router>
-      <a href='/users/sign_in'>Sign In</a>
-    </div>
+      <div className="top-bar">
+        <nav>
+          <NavLink to='/'>Booze Yourself</NavLink>
+          <NavLink to='/beers'>Beers</NavLink>
+          <NavLink to='/breweries'>Breweries</NavLink>
+          <a href='/users/sign_in'>Sign In</a>
+        </nav>
+      </div>
 
 
     <ul className="breadcrumbs">
-      <Router>
-      <li><Link to="/">Home</Link></li>
-      </Router>
+      <li><NavLink to="/">Home</NavLink></li>
     </ul>
   </div>
 
