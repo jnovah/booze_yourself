@@ -1,4 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
-  storage :file
-  # storage :fog
+  permissions 0777
+  # storage :file
+  storage :fog
 end
