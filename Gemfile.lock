@@ -50,6 +50,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.2.1)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     coveralls (0.7.1)
@@ -69,6 +73,10 @@ GEM
     docile (1.1.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
     factory_girl (4.8.1)
@@ -245,8 +253,10 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  carrierwave (~> 1.0)
   coveralls
   devise
+  dotenv-rails
   factory_girl_rails
   jquery-rails
   launchy

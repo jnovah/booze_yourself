@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   has_many :beers
   validates :username, presence: true
   validates :state, presence: true
