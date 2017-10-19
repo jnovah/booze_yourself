@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018144247) do
+ActiveRecord::Schema.define(version: 20171018154249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beers", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.string "abv"
+    t.string "img"
+    t.string "avg_score"
+    t.bigint "user_id"
+    t.bigint "brewery_id"
+    t.bigint "availability_id"
+    t.bigint "type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["availability_id"], name: "index_beers_on_availability_id"
+    t.index ["brewery_id"], name: "index_beers_on_brewery_id"
+    t.index ["type_id"], name: "index_beers_on_type_id"
+    t.index ["user_id"], name: "index_beers_on_user_id"
+  end
 
   create_table "types", force: :cascade do |t|
     t.string "name", null: false
