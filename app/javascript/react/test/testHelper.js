@@ -6,9 +6,7 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import createRouterContext from 'react-router-test-context';
-import { shallow } from 'enzyme';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
 
 Object.assign(global, {

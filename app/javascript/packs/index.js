@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BoozeYourself from '../react/src/BoozeYourself';
+import BoozeYourself from '../react/src/boozeYourself';
+import { BrowserRouter } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<BoozeYourself />, document.getElementById('app'));
+  ReactDOM.render((
+    <BrowserRouter>
+      <BoozeYourself />
+    </BrowserRouter>
+  ), document.getElementById('app'));
 })

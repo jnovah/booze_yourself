@@ -1,14 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-// import BackButton from './BackButton'
+import { BrowserRouter, NavLink } from 'react-router-dom'
 
 const NavBar = props => {
   return(
     <div>
-      <Router>
-        <Link to='/'>Booze Yourself</Link>
-      </Router>
-    </div>
+      <div className="top-bar">
+        <nav>
+          <NavLink to='/'>Booze Yourself</NavLink>
+          <NavLink to='/beers'>Beers</NavLink>
+          <NavLink to='/breweries'>Breweries</NavLink>
+          <a href='/users/sign_in'>Sign In</a>
+        </nav>
+      </div>
+
+
+    <ul className="breadcrumbs">
+      <li><NavLink to="/">Home</NavLink></li>
+    </ul>
+  </div>
 
   )
 }
