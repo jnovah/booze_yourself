@@ -1,5 +1,6 @@
 require "rails_helper"
 beer = FactoryGirl.create(:beer)
+type = FactoryGirl.create(:type)
 
 RSpec.describe Beer do
   it "has a name, description, abv, avg_score, and ids for user, brewery, type, and availability" do
@@ -8,7 +9,7 @@ RSpec.describe Beer do
     expect(beer.avg_score).to include("99")
     expect(beer.user_id).to eq(2)
     expect(beer.brewery_id).to eq(2)
-    expect(beer.type_id).to eq(2)
+    expect(beer.type_id).to eq(1)
     expect(beer.availability_id).to eq(2)
   end
 end

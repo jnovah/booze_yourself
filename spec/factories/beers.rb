@@ -6,7 +6,7 @@ FactoryGirl.define do
     user_id 2
     brewery_id 2
     availability_id 2
-    type_id 2
+    type_id 1
     description "It has buds and light and water"
   end
 end
