@@ -3,11 +3,11 @@ import React from 'react'
 const NewestBeersTile = props => {
   let beers = props.beers.map(beer => {
     return(
-        <tr>
-          <td>{beer.beerName}</td>
-          <td>{beer.brewery}</td>
-          <td>{beer.rating}</td>
-        </tr>
+      <tr>
+        <td>{beer.beerName}</td>
+        <td>{beer.brewery}</td>
+        <td>{beer.rating}</td>
+      </tr>
     )
   })
   return(

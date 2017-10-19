@@ -2,13 +2,17 @@ import NewestBeersTile from '../../src/Components/NewestBeersTile'
 
 describe('NewestBeersTile', () => {
   let wrapper;
+  let beers = [
+    {beerName: "Bud Light",
+    brewery: "Busch",
+    rating: 2}, {beerName: "Bud",
+    brewery: "Busch",
+    rating: 2}]
 
   beforeEach(() => {
     wrapper = mount(
       <NewestBeersTile
-        beerName="Bud Light"
-        brewery="Busch"
-        rating="2"
+        beers={beers}
       />
     )
   })
@@ -25,10 +29,8 @@ describe('NewestBeersTile', () => {
     expect(wrapper.find('thead')).toBePresent()
   })
 
-  it('should render two tr elements', () => {
+  it('should render tr elements', () => {
     expect(wrapper.find('tr')).toBePresent()
-    expect(wrapper.find('tr').length).toEqual(2)
-
   })
 
   it('should render three th tags with text Name, Brewery and Rating', () => {
@@ -42,10 +44,13 @@ describe('NewestBeersTile', () => {
     expect(wrapper.find('tbody')).toBePresent()
   })
 
-  it('should render three td tags with text Bud Light, Busch and 2', () => {
+  it('should render six td tags with text Bud Light, Busch and 2', () => {
     expect(wrapper.find('td').at(0).text()).toEqual('Bud Light')
     expect(wrapper.find('td').at(1).text()).toEqual('Busch')
     expect(wrapper.find('td').at(2).text()).toEqual('2')
+    expect(wrapper.find('td').at(3).text()).toEqual('Bud')
+    expect(wrapper.find('td').at(4).text()).toEqual('Busch')
+    expect(wrapper.find('td').at(5).text()).toEqual('2')
 
   })
 })
