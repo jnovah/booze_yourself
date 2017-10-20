@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class BeerShow extends Component {
   constructor(props){
@@ -43,7 +43,7 @@ class BeerShow extends Component {
           <div className="horizontal-line"></div>
         </div>
         <div className="review-box"><span className="review-box-text">Reviews and Ratings</span>
-          <Link to='#' class="button">Add Review</Link>
+          <NavLink to='#' class="button">Add Review</NavLink>
           </div>
       </div>
     )

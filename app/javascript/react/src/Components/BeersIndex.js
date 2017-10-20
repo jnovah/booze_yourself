@@ -46,12 +46,8 @@ class BeersIndex extends Component {
           </tbody>
         </table>
       </div>
-
-
     )
   }
-
-
 }
 
 

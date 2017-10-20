@@ -3,12 +3,12 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 
 const NewestBeersTile = props => {
-  let path = `/beer/${props.id}`
+
 
   let beers = props.beers.map(beer => {
     return(
       <tr>
-        <td><Link to={path}>{beer.beerName}</Link></td>
+        <td>{beer.beerName}</td>
         <td>{beer.brewery}</td>
         <td>{beer.rating}</td>
       </tr>

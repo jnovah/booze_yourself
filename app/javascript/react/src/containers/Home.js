@@ -23,10 +23,10 @@ class Home extends Component {
     return(
 
       <div className='row'>
-        <div>
+        <div className="search-bar">
           <ul>
             <input type='search' placeholder='Search'></input>
-            <button className='button' type='button'>Search</button>
+            <button className='button' id="search-button" type='button'>Search</button>
           </ul>
         </div>
         <div>

@@ -3,12 +3,10 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 
 const TopBeersTile = props => {
-  debugger
-  let path = `/beer/${props.id}`
   let beers = props.beers.map(beer => {
     return(
         <tr>
-          <td><Link to={path}>{beer.beerName}</Link></td>
+          <td>{beer.beerName}</td>
           <td>{beer.brewery}</td>
           <td>{beer.rating}</td>
         </tr>
