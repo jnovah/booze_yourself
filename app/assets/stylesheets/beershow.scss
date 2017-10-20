@@ -1,0 +1,78 @@
+.cell {
+  
+}
+
+#beer-name {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+#brewery {
+  display: inline-block;
+}
+
+.grid-x {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#rating {
+  display: inline-block;
+  padding-left: 850px;
+}
+
+.horizontal-line {
+  margin: 25px 0px;
+  width: 100%;
+  height: 2px;
+  background: black;
+  overflow: hidden;
+}
+
+.beer-info {
+  text-decoration: underline;
+}
+
+.brewed-by {
+  font-weight: bold;
+}
+
+.ABV {
+  padding-top: 10px;
+  font-weight: bold;
+
+}
+
+.availability {
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.style {
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.beer-information {
+  padding-left: 10px;
+}
+
+.review-box {
+  width: 100%;
+  border: 3px solid #2681B8;
+  padding: 10px;
+
+}
+
+.review-box-text {
+  padding-bottom: 8px;
+  font-weight: bold;
+  // font-size: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  margin-left: 1100px;
+  margin-top: 17px;
+}

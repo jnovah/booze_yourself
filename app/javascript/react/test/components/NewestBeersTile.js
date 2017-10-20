@@ -1,4 +1,5 @@
 import NewestBeersTile from '../../src/Components/NewestBeersTile'
+import { shallow } from 'enzyme'
 
 describe('NewestBeersTile', () => {
   let wrapper;
@@ -10,7 +11,7 @@ describe('NewestBeersTile', () => {
     rating: 2}]
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = shallow(
       <NewestBeersTile
         beers={beers}
       />

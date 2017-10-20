@@ -11,9 +11,9 @@ class Home extends Component {
     this.state = {beers:[
       {beerName: "Bud Light",
       brewery: "Busch",
-      rating: 2}, {beerName: "Bud",
+      rating: 2, id: 1}, {beerName: "Bud",
       brewery: "Busch",
-      rating: 2}]
+      rating: 2, id: 2}]
     }
 
 
@@ -23,10 +23,10 @@ class Home extends Component {
     return(
 
       <div className='row'>
-        <div>
+        <div className="search-bar">
           <ul>
             <input type='search' placeholder='Search'></input>
-            <button className='button' type='button'>Search</button>
+            <button className='button' id="search-button" type='button'>Search</button>
           </ul>
         </div>
         <div>
