@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BoozeYourself from '../react/src/boozeYourself';
+import BoozeYourself from '../react/src/BoozeYourself';
 import { BrowserRouter } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
