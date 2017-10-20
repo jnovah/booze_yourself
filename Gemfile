@@ -9,6 +9,8 @@ gem 'webpacker'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
+gem 'brewery_db'
+gem 'seed_dump'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
