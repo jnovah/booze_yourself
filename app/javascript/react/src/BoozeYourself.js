@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBar from './containers/NavBar'
 import Home from './containers/Home'
 import BeersIndex from './Components/BeersIndex'
+import BeerShow from './containers/BeerShow'
 
 class BoozeYourself extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class BoozeYourself extends Component {
         <Switch>
           <Route path='/' exact component={Home} key={1} />
           <Route path='/beers' component={BeersIndex} key={2} />
+          <Route path='/beer/:id' component={BeerShow} key={3} />
         </Switch>
       </main>
     </div>

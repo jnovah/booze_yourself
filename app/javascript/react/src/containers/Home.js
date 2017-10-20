@@ -11,9 +11,9 @@ class Home extends Component {
     this.state = {beers:[
       {beerName: "Bud Light",
       brewery: "Busch",
-      rating: 2}, {beerName: "Bud",
+      rating: 2, id: 1}, {beerName: "Bud",
       brewery: "Busch",
-      rating: 2}]
+      rating: 2, id: 2}]
     }
 
 
