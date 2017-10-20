@@ -11,7 +11,7 @@ const NewestBeersTile = props => {
     )
   })
   return(
-    <div>
+    <div className="new-table">
       Newest Beers
       <table>
         <thead>
