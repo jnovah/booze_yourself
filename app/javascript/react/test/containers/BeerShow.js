@@ -5,13 +5,11 @@ import { shallow } from 'enzyme'
 describe('BeerShow', () => {
   let wrapper;
 
-
   beforeEach(() => {
     wrapper = shallow(
       <BeerShow/>
     )
   })
-
 
   it('should have a specified initial state', () => {
     expect(wrapper.state()).toEqual({
@@ -23,7 +21,6 @@ describe('BeerShow', () => {
       ABV: "4.5%",
       availability: "year round",
       breweryLink: "http://www.budlight.com/"
-
   })
 })
 
