@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import NewestBeersTile from '../Components/NewestBeersTile'
 import TopBeersTile from '../Components/TopBeersTile'
-<<<<<<< HEAD
-import API from 'fetch-api'
-=======
 import BeersIndex from '../Components/BeersIndex'
 import { Route, Switch } from 'react-router-dom';
 
->>>>>>> 205cb9fb90de3145269090b2bc6a0d3b683e8a9f
 
 class Home extends Component {
   constructor(props) {
@@ -54,17 +50,6 @@ class Home extends Component {
           </ul>
         </div>
         <div>
-<<<<<<< HEAD
-          <TopBeersTile
-            beers={this.state.beers}
-          />
-        </div>
-        <div>
-          <NewestBeersTile
-            beers={this.state.beers}
-
-          />
-=======
           <div className='small-6 columns top-beer'>
             <TopBeersTile
               beers={this.state.beers}
@@ -75,7 +60,6 @@ class Home extends Component {
               beers={this.state.beers}
             />
           </div>
->>>>>>> 205cb9fb90de3145269090b2bc6a0d3b683e8a9f
         </div>
       </div>
     )
