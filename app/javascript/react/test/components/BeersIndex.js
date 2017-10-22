@@ -50,12 +50,5 @@ describe('BeersIndex', () => {
     expect(wrapper.find('tbody')).toBePresent()
   })
 
-  // it('should render three td tags with text Bud Light, Busch and 2', () => {
-  //   expect(wrapper.find('td').at(0).text()).toEqual('Bud Light')
-  //   expect(wrapper.find('td').at(1).text()).toEqual('Busch')
-  //   expect(wrapper.find('td').at(2).text()).toEqual('2')
-  //   expect(wrapper.find('td').at(3).text()).toEqual('Bud')
-  //   expect(wrapper.find('td').at(4).text()).toEqual('Busch')
-  //   expect(wrapper.find('td').at(5).text()).toEqual('2')
-  // })
+
 })

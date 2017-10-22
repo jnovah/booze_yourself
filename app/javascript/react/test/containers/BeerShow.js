@@ -1,7 +1,6 @@
 import BeerShow from '../../src/containers/BeerShow'
 import { shallow } from 'enzyme'
 
-
 describe('BeerShow', () => {
   let wrapper;
 
@@ -11,7 +10,6 @@ describe('BeerShow', () => {
       <BeerShow/>
     )
   })
-
 
   it('should have a specified initial state', () => {
     expect(wrapper.state()).toEqual({
@@ -34,8 +32,9 @@ describe('BeerShow', () => {
   it('should render one h1 element', () => {
     expect(wrapper.find('h1')).toBePresent()
   })
-  it('should render one h3 element', () => {
+  it('should render one h3 element with text Beer info', () => {
     expect(wrapper.find('h3')).toBePresent()
+    expect(wrapper.find('h3').text()).toEqual('Beer Info')
   })
 
   it('should render one a element', () => {
