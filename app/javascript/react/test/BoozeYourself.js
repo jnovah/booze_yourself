@@ -18,8 +18,8 @@ describe('BoozeYourself', () => {
     expect(wrapper.find('Switch').length).toEqual(1)
   })
 
-  it('should render three Route components', () => {
-      expect(wrapper.find('Route').length).toEqual(3)
+  it('should render two Route components', () => {
+      expect(wrapper.find('Route').length).toEqual(2)
   })
 
   it('should render a Route component', () => {
