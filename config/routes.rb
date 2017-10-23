@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root "static_files#index"
-  devise_for :users
 
   devise_for :users
   get '*path', to: 'static_files#index'
