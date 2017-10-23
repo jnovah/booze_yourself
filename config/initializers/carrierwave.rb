@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
         :aws_secret_access_key => ENV['S3_SECRET'],
         :region => ENV['S3_REGION']
       }
-      # config.storage = :fog
+      config.storage = :fog
       #
       # config.permissions = 0666
       # config.directory_permissions = 0777
