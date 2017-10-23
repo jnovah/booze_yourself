@@ -35,7 +35,7 @@ class BeersIndex extends Component {
 
     return(
       <Switch>
-      <Route exact path={'/beers/:id'} component={BeerShow} key={3} />
+      <Route path={'/beers/:id'} component={BeerShow} key={3} />
       <div className='index'>
         <h1 className='all'>All Beers</h1>
         <table className='all-beer-table'>
@@ -55,18 +55,5 @@ class BeersIndex extends Component {
     )
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default BeersIndex
