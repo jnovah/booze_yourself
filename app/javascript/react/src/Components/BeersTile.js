@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const BeersTile = props => {
+
   let path = `/beers/${props.id}`
 
   return(

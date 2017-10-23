@@ -21,7 +21,6 @@ class BoozeYourself extends Component {
         <Switch>
           <Route path='/' exact component={Home} key={1} />
           <Route path='/beers' component={BeersIndex} key={2} />
-          <Route path='/beers/:id' component={BeerShow} key={3} />
         </Switch>
       </main>
     </div>
