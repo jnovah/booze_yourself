@@ -427,11 +427,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
-<<<<<<< HEAD
-  foundation-rails
-=======
   fog
->>>>>>> 9c43477679d0831acfd63bc9e2d18e87a7bdded3
   jquery-rails
   launchy
   listen (~> 3.0.5)
