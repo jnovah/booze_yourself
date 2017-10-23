@@ -6,9 +6,10 @@ feature "profile photo" do
 
     fill_in "Username", with: "hello"
     fill_in "Email", with: "hello@hello.hello"
+    fill_in "State", with: "hello"
     fill_in "Password", with: "boomstick!3vilisd3ad"
     fill_in "Password confirmation", with: "boomstick!3vilisd3ad"
-    attach_file :profile_photo, "#{Rails.root}/spec/support/images/picture.jpeg"
+    attach_file "Img", "#{Rails.root}/spec/support/images/picture.jpeg"
     click_button "Sign up"
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
