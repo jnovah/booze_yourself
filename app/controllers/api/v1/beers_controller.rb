@@ -1,5 +1,6 @@
 class Api::V1::BeersController < ApplicationController
   def index
-    render json: Beer.all.limit(20)
+    beerList = $brewery_db.beers.all
+    render json: beerList.first
   end
 end

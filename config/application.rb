@@ -17,6 +17,11 @@ require "brewery_db"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+$brewery_db = BreweryDB::Client.new do |config|
+  config.api_key=ENV['brewery_db_api_key']
+  config.logger = Rails.logger
+end
+
 module BoozeYourself
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
