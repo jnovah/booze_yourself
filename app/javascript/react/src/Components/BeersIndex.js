@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import BeersTile from './BeersTile'
+import { Route, Switch } from 'react-router-dom'
+import BeerShow from '../containers/BeerShow'
 
 
 class BeersIndex extends Component {
@@ -16,9 +18,12 @@ class BeersIndex extends Component {
 
   render(){
 
+
       let beers = this.state.beers.map(beer =>{
+        let path = `/beers/${beer.id}`
         return(
           <BeersTile
+            path={path}
             beerName={beer.beerName}
             brewery={beer.brewery}
             rating={beer.rating}
@@ -27,8 +32,10 @@ class BeersIndex extends Component {
           />
         )
       })
-      
+
     return(
+      <Switch>
+      <Route exact path={'/beers/:id'} component={BeerShow} key={3} />
       <div className='index'>
         <h1 className='all'>All Beers</h1>
         <table className='all-beer-table'>
@@ -44,6 +51,7 @@ class BeersIndex extends Component {
           </tbody>
         </table>
       </div>
+      </Switch>
     )
   }
 }
