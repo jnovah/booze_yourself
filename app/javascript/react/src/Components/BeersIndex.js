@@ -11,7 +11,6 @@ class BeersIndex extends Component {
       rating: 2, id: 1}, {beerName: "Bud",
       brewery: "Busch",
       rating: 2, id: 2}]
-
     }
   }
 
@@ -26,10 +25,9 @@ class BeersIndex extends Component {
             id={beer.id}
             key={beer.id}
           />
-
         )
-
       })
+
     return(
       <div className='index'>
         <h1 className='all'>All Beers</h1>

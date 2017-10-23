@@ -13,7 +13,6 @@ class BeerShow extends Component {
       ABV: "4.5%",
       availability: "year round",
       breweryLink: "http://www.budlight.com/"
-
     }
   }
   render(){

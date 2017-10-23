@@ -17,9 +17,6 @@ describe('BeersIndex', () => {
     )
   })
 
-
-
-
   it('should render a BeersTile component', () => {
     expect(wrapper.find(BeersTile)).toBePresent();
   })
@@ -49,6 +46,4 @@ describe('BeersIndex', () => {
   it('should render one tbody element', () => {
     expect(wrapper.find('tbody')).toBePresent()
   })
-
-
 })

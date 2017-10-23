@@ -10,6 +10,8 @@
     "foundation": "^4.2.1-1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
+    "react-breadcrumbs": "^2.1.0",
+    "react-breadcrumbs-dynamic": "^1.0.8",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

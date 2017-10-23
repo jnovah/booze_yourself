@@ -1,33 +1,26 @@
 import NavBar from '../../src/containers/NavBar'
+import { shallow, mount, render } from 'enzyme';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 
 describe('NavBar', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = shallow(
       <NavBar />
     )
   })
 
-  it('should render four a elements', () => {
+  it('should render five a elements', () => {
     expect(wrapper.find('a')).toBePresent()
-    expect(wrapper.find('a').length).toEqual(4)
+    expect(wrapper.find('a').length).toEqual(1)
   })
 
-  it('should render an anchor tag with text Booze Yourself', () => {
-    expect(wrapper.find('a').at(0).text()).toEqual('Booze Yourself')
+  it('should render four NavLink components', () => {
+    expect(wrapper.find('NavLink').length).toEqual(4)
+    expect(wrapper.find('NavLink').at(0).prop('to')).toEqual('/')
+    expect(wrapper.find('NavLink').at(1).prop('to')).toEqual('/beers')
+    expect(wrapper.find('NavLink').at(2).prop('to')).toEqual('/breweries')
+    expect(wrapper.find('NavLink').at(3).prop('to')).toEqual('/')
   })
-
-  it('should render an anchor tag with text Beers', () => {
-    expect(wrapper.find('a').at(1).text()).toEqual('Beers')
-  })
-
-  it('should render an anchor tag with text Breweries', () => {
-    expect(wrapper.find('a').at(2).text()).toEqual('Breweries')
-  })
-
-  it('should render an anchor tag with text Sign In', () => {
-    expect(wrapper.find('a').at(3).text()).toEqual('Sign In')
-  })
-
 })
