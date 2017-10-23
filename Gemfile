@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
 
+# gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'devise'
 gem 'jquery-rails'
 gem 'rails', '~> 5.1.2'
@@ -8,7 +9,8 @@ gem 'puma', '~> 3.7'
 gem 'webpacker'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'foundation-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'fog'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -18,6 +20,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy', require: false
