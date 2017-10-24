@@ -11,11 +11,17 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "brewery_db"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+$brewery_db = BreweryDB::Client.new do |config|
+  config.api_key=ENV['brewery_db_api_key']
+  config.logger = Rails.logger
+end
 
 module BoozeYourself
   class Application < Rails::Application

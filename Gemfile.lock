@@ -43,6 +43,10 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     bcrypt (3.1.11)
+    brewery_db (0.2.4)
+      faraday (~> 0.8.0)
+      faraday_middleware (~> 0.8)
+      hashie (>= 1.1, < 3)
     builder (3.2.3)
     capybara (2.15.4)
       addressable
@@ -64,6 +68,7 @@ GEM
       thor (~> 0.19.4)
       tins (~> 1.6)
     crass (1.0.2)
+    database_cleaner (1.6.1)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -86,6 +91,10 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faraday (0.8.11)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -246,6 +255,7 @@ GEM
       sass (>= 3.2.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    hashie (2.1.2)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.0)
@@ -275,6 +285,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
+    multipart-post (1.2.0)
     netrc (0.11.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
@@ -369,6 +380,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    seed_dump (3.2.4)
+      activerecord (>= 4)
+      activesupport (>= 4)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -424,9 +438,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brewery_db
   capybara
   carrierwave (~> 1.0)
   coveralls
+  database_cleaner
   devise
   dotenv-rails
   factory_girl_rails
@@ -443,6 +459,7 @@ DEPENDENCIES
   rails_layout
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
+  seed_dump
   shoulda
   spring
   spring-watcher-listen (~> 2.0.0)

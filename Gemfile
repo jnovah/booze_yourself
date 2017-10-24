@@ -12,7 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'carrierwave', '~> 1.0'
 gem 'fog'
 gem 'foundation-rails'
-
+gem 'brewery_db'
+gem 'seed_dump'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -30,10 +31,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
+
 end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :production do
