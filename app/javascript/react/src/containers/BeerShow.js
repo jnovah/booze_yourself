@@ -21,9 +21,10 @@ class BeerShow extends Component {
   }
 
   addNewReview(formPayLoad) {
-    this.setState({ reviews: [...this.state.reviews, formPayLoad] });
-    <Redirect to={`/beers/${this.state.id}`} />
-    debugger
+    let updateReviews = this.state.reviews
+    updateReviews.push(formPayLoad)
+    this.setState({ reviews: updateReviews });
+    console.log(this.state.reviews);
   }
 
   render(){
