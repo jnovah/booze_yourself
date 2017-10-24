@@ -3,12 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 const BeersTile = props => {
 
-  let path = `/beers/${props.id}`
-
   return(
     <tr>
-      <td><NavLink to={path}>{props.beerName}</NavLink></td>
-      <td>{props.brewery}</td>
+      <td><NavLink to='/beers/:id'>{props.beerName}</NavLink></td>
+      <td><a target="_blank" href={`${props.brewery.website}`}>{props.brewery.name}</a></td>
       <td>{props.rating}</td>
     </tr>
   )

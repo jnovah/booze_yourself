@@ -7,19 +7,35 @@ class BeerShow extends Component {
   constructor(props){
     super(props)
     this.state = {
-      beerName: "Bud Light",
+      name: "Bud Light",
       brewery: "Busch",
       rating: 2,
       id: 1,
       style: "lager",
-      ABV: "4.5%",
-      availability: "year round",
+      abv: "4.5%",
       breweryLink: "http://www.budlight.com/",
       reviews: []
     }
     this.addNewReview = this.addNewReview.bind(this)
   }
 
+  componentDidMount() {
+    fetch('/api/v1/beers/2')
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      this.setState({
+        name: body.beer.name,
+        brewery: body.beer.brewery.name,
+        breweryLink: body.beer.brewery.website,
+        rating: body.beer.avg_score,
+        id: body.beer.id,
+        style: body.beer.type.name,
+        abv: body.beer.abv
+      })
+    })
+  }
   addNewReview(formPayLoad) {
     let updateReviews = this.state.reviews
     updateReviews.push(formPayLoad)
@@ -31,7 +47,7 @@ class BeerShow extends Component {
       <div className="grid-x">
         <div className="large-12 medium-10 small-6 cell">
           <h1 className="beer-header">
-            <div id="beer-name">{this.state.beerName}</div>
+            <div id="beer-name">{this.state.name}</div>
             <div id="brewery"> | {this.state.brewery}</div>
             <div id="rating">Rating: {this.state.rating}</div>
           </h1>
@@ -44,9 +60,7 @@ class BeerShow extends Component {
               <a target="_blank" href={this.state.breweryLink}>{this.state.brewery}</a>
             </div>
               <div className="ABV">ABV:</div>
-              <div className="ABV%">{this.state.ABV}</div>
-              <div className="availability">Availability:</div>
-              <div className="availability-text">{this.state.availability}</div>
+              <div className="ABV%">{this.state.abv}%</div>
               <div className="style">Style:</div>
               <div className="style-text"> {this.state.style}</div>
           </div>
