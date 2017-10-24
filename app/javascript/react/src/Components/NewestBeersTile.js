@@ -7,7 +7,7 @@ const NewestBeersTile = props => {
 
   let beers = props.beers.map(beer => {
     return(
-      <tr>
+      <tr id='tile'>
         <td>{beer.beerName}</td>
         <td>{beer.brewery}</td>
         <td>{beer.rating}</td>
@@ -17,7 +17,7 @@ const NewestBeersTile = props => {
   return(
     <div className="new-table">
       Newest Beers
-      <table>
+      <table className="table-header">
         <thead>
           <tr>
             <th>Name</th>
@@ -27,6 +27,9 @@ const NewestBeersTile = props => {
         </thead>
 
         <tbody>
+          {beers}
+          {beers}
+          {beers}
           {beers}
         </tbody>
       </table>

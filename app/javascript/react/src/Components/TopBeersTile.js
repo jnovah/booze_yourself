@@ -1,34 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter, Link } from 'react-router-dom'
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 
-const TopBeersTile = props => {
-  let beers = props.beers.map(beer => {
+
+
+class TopBeersTile extends Component {
+  constructor(props){
+    super(props)
+  }
+
+  render(){
     return(
-        <tr>
-          <td>{beer.beerName}</td>
-          <td>{beer.brewery}</td>
-          <td>{beer.rating}</td>
-        </tr>
+      <div className="top-table">
+        Top 20 Beers
+        <BootstrapTable className="table-responsive" ref='table' data={ this.props.beers } >
+              <TableHeaderColumn  className="table-header" dataField='beerName' isKey={ true } dataSort={ true }>Beer</TableHeaderColumn>
+              <TableHeaderColumn className="table-header" dataField='brewery' dataSort={ true }>Brewery</TableHeaderColumn>
+              <TableHeaderColumn className="table-header" dataField='rating'>Rating</TableHeaderColumn>
+          </BootstrapTable>
+      </div>
     )
-  })
-  return(
-    <div className="top-table">
-      Top 20 Beers
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Brewery</th>
-            <th>Rating</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {beers}
-        </tbody>
-      </table>
-    </div>
-  )
+  }
 }
 export default TopBeersTile

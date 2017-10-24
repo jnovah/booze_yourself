@@ -22,20 +22,22 @@ class Home extends Component {
 
     return(
 
-      <div className='row'>
-        <div className="search-bar">
-          <ul>
-            <input type='search' placeholder='Search'></input>
-            <button className='button' id="search-button" type='button'>Search</button>
-          </ul>
+      <div className='grid-x'>
+       <div className='header-image' >
+        <div className="small-4 small-offset-4 cell">
+          <input className='search-bar' placeholder='Search All Beers'></input>
+          <div className="search-button-wrapper">
+            <button className='small-2 small-offset-5 search-button'>Search</button>
+          </div>
         </div>
+       </div>
         <div>
-          <div className='small-6 columns top-beer'>
+          <div className='small-6 cell top-beer'>
             <TopBeersTile
               beers={this.state.beers}
             />
           </div>
-          <div className='small-6 columns new-beer'>
+          <div className='small-6 cell new-beer'>
             <NewestBeersTile
               beers={this.state.beers}
             />
