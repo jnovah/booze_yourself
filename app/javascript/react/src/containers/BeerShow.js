@@ -24,7 +24,6 @@ class BeerShow extends Component {
     let updateReviews = this.state.reviews
     updateReviews.push(formPayLoad)
     this.setState({ reviews: updateReviews });
-    console.log(this.state.reviews);
   }
 
   render(){

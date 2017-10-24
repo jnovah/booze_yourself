@@ -31,7 +31,6 @@ class ReviewForm extends Component {
   }
 
   render(){
-    console.log(this.state.description);
     return(
       <form onSubmit={this.handleSubmit}>
         <div className='row' onChange={this.handleRadioChange}>
