@@ -17,9 +17,8 @@ describe('NavBar', () => {
   })
 
   it('should render four NavLink components', () => {
-    expect(wrapper.find('NavLink').length).toEqual(4)
+    expect(wrapper.find('NavLink').length).toEqual(2)
     expect(wrapper.find('NavLink').at(0).prop('to')).toEqual('/')
     expect(wrapper.find('NavLink').at(1).prop('to')).toEqual('/beers')
-    expect(wrapper.find('NavLink').at(3).prop('to')).toEqual('/')
   })
 })
