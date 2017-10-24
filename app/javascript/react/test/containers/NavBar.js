@@ -20,7 +20,6 @@ describe('NavBar', () => {
     expect(wrapper.find('NavLink').length).toEqual(4)
     expect(wrapper.find('NavLink').at(0).prop('to')).toEqual('/')
     expect(wrapper.find('NavLink').at(1).prop('to')).toEqual('/beers')
-    expect(wrapper.find('NavLink').at(2).prop('to')).toEqual('/breweries')
     expect(wrapper.find('NavLink').at(3).prop('to')).toEqual('/')
   })
 })
