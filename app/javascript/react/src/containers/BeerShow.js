@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Switch, Route, Redirect } from 'react-router-dom'
+import ReviewsIndex from './ReviewsIndex'
+import ReviewForm from './ReviewForm'
 
 class BeerShow extends Component {
   constructor(props){
@@ -12,9 +14,18 @@ class BeerShow extends Component {
       style: "lager",
       ABV: "4.5%",
       availability: "year round",
-      breweryLink: "http://www.budlight.com/"
+      breweryLink: "http://www.budlight.com/",
+      reviews: []
     }
+    this.addNewReview = this.addNewReview.bind(this)
   }
+
+  addNewReview(formPayLoad) {
+    let updateReviews = this.state.reviews
+    updateReviews.push(formPayLoad)
+    this.setState({ reviews: updateReviews });
+  }
+
   render(){
     return(
       <div className="grid-x">
@@ -42,8 +53,12 @@ class BeerShow extends Component {
           <div className="horizontal-line"></div>
         </div>
         <div className="review-box"><span className="review-box-text">Reviews and Ratings</span>
-          <NavLink to='#' class="button">Add Review</NavLink>
-          </div>
+        <Switch>
+          <Route path={`/beers/${this.state.id}/new-review`} render={props => (<ReviewForm addNewReview={this.addNewReview} {...props} />)} />
+          <NavLink to={`/beers/${this.state.id}/new-review`} class="button">Add Review</NavLink>
+        </Switch>
+        <ReviewsIndex reviews={this.state.reviews} beerId={this.state.id}/>
+        </div>
       </div>
     )
   }
