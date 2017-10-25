@@ -20,7 +20,7 @@ class BeerShow extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/beers/:id')
+    fetch(`/api/v1/beers/${this.props.match.params.id}`)
     .then(response => {
       return response.json()
     })
