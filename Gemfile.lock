@@ -458,6 +458,7 @@ DEPENDENCIES
   fog
   foundation-rails
   jquery-rails
+  json
   launchy
   listen (~> 3.0.5)
   pg (~> 0.18)

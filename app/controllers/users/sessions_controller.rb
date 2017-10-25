@@ -1,13 +1,11 @@
 class Users::SessionsController < Devise::SessionsController
-  before_action :configure_sign_in_params, only: [:create]
+  # before_action :configure_sign_in_params, only: [:create]
 
   def new
-    binding.pry
     super
   end
 
   def destroy
-    binding.pry
     super
   end
 

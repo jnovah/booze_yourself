@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'brewery_db'
 gem 'seed_dump'
 gem "active_model_serializers"
+gem "json"
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

@@ -40,21 +40,24 @@ class BeersIndex extends Component {
       })
 
     return(
-      <div className='index'>
-        <h1 className='all'>All Beers</h1>
-        <table className='all-beer-table'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Brewery</th>
-              <th>Rating</th>
-            </tr>
-          </thead>
-          <tbody>
-            {beers}
-          </tbody>
-        </table>
-      </div>
+      <Switch>
+        <Route path="/beers/:id" component={BeerShow} key={3} />
+        <div className='index'>
+          <h1 className='all'>All Beers</h1>
+          <table className='all-beer-table'>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Brewery</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              {beers}
+            </tbody>
+          </table>
+        </div>
+      </Switch>
     )
   }
 }

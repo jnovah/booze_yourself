@@ -38,9 +38,20 @@ class BeerShow extends Component {
     })
   }
   addNewReview(formPayLoad) {
-    let updateReviews = this.state.reviews
-    updateReviews.push(formPayLoad)
-    this.setState({ reviews: updateReviews });
+    fetch(`/api/v1/beers/${this.props.match.params.id}/reviews`, {
+      method: "POST",
+      body: JSON.stringify(formPayLoad),
+      credentials: "same-origin",
+      headers: {"Content-Type": "application/json"},
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(body => {
+      let updateReviews = this.state.reviews
+      updateReviews.push(body)
+      this.setState({ reviews: updateReviews });
+    })
   }
 
   render(){
@@ -71,7 +82,7 @@ class BeerShow extends Component {
         </div>
         <div className="review-box"><span className="review-box-text">Reviews and Ratings</span>
         <Switch>
-          <Route path={`/beers/${this.state.id}/new-review`} render={props => (<ReviewForm addNewReview={this.addNewReview} {...props} />)} />
+          <Route path={`/beers/${this.state.id}/new-review`} render={props => (<ReviewForm addNewReview={this.addNewReview} beerId={this.props.match.params.id} {...props} />)} />
           <NavLink to={`/beers/${this.state.id}/new-review`} class="button">Add Review</NavLink>
         </Switch>
         <ReviewsIndex reviews={this.state.reviews} beerId={this.state.id}/>
