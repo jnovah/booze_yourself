@@ -23,7 +23,7 @@ class ReviewForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    let formPayLoad = { rating: this.state.rating, description: this.state.description, beer_id: this.props.beerId }
+    let formPayLoad = { rating: this.state.rating, description: this.state.description, beer_id: this.props.beerId, user_id: this.props.userId }
     if (this.state.rating !== '' && this.state.description !== '') {
       this.setState({ rating: '', description: '' })
       this.props.addNewReview(formPayLoad)

@@ -9,13 +9,11 @@
   </head>
 
   <body>
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
 
     <% if user_signed_in? %>
       <div><%= image_tag current_user.avatar %></div>
     <% end %>
-    
+
     <%= yield %>
   </body>
 </html>

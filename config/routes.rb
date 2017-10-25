@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         resources :reviews, only: [:index, :create]
       end
       resources :breweries, only: [:index]
+      resources :members
     end
   end
 
