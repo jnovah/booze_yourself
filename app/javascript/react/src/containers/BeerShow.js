@@ -20,18 +20,19 @@ class BeerShow extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/beers/2')
+    fetch('/api/v1/beers/:id')
     .then(response => {
       return response.json()
     })
     .then(body => {
       this.setState({
         name: body.beer.name,
+        description: body.beer.description,
         brewery: body.beer.brewery.name,
         breweryLink: body.beer.brewery.website,
         rating: body.beer.avg_score,
         id: body.beer.id,
-        style: body.beer.type.name,
+        style: body.beer.type_name,
         abv: body.beer.abv
       })
     })
@@ -63,6 +64,8 @@ class BeerShow extends Component {
               <div className="ABV%">{this.state.abv}%</div>
               <div className="style">Style:</div>
               <div className="style-text"> {this.state.style}</div>
+              <div className="style">Description:</div>
+              <div className="style-text"> {this.state.description}</div>
           </div>
           <div className="horizontal-line"></div>
         </div>

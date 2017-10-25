@@ -19,7 +19,7 @@ class BoozeYourself extends Component {
       <main>
         <NavBar />
         <Switch>
-          <Route path='/' exact component={Home} key={1} />
+          <Route path='/' component={Home} key={1} />
           <Route path='/beers' component={BeersIndex} key={2} />
         </Switch>
       </main>
