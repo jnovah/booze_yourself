@@ -14,12 +14,7 @@ describe('Home', () => {
 
   it('should have a specified initial state', () => {
     expect(wrapper.state()).toEqual({
-        beers:[
-          {name: "Bud Light",
-          brewery: "Busch",
-          rating: 2, id: 1}, {name: "Bud",
-          brewery: "Busch",
-          rating: 2, id: 2}],
+        beers:[],
           search_value: ''
     })
   })

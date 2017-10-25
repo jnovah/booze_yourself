@@ -8,12 +8,8 @@ import { Route, Switch } from 'react-router-dom';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {beers:[
-      {name: "Bud Light",
-      brewery: "Busch",
-      rating: 2, id: 1}, {name: "Bud",
-      brewery: "Busch",
-      rating: 2, id: 2}],
+    this.state = {
+      beers:[],
       search_value: ''
     }
     this.handleChange = this.handleChange.bind(this);
