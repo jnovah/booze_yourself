@@ -1,4 +1,7 @@
 class Api::V1::BeersController < ApplicationController
+  protect_from_forgery unless: -> { request.format.json? }
+  before_action :authenticate_user!, only: [:show]
+
   def index
     # beerList = $brewery_db.beers.all
     # Beer.all.each do |beer|

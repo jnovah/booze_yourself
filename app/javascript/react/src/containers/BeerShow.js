@@ -14,7 +14,8 @@ class BeerShow extends Component {
       style: "lager",
       abv: "4.5%",
       breweryLink: "http://www.budlight.com/",
-      reviews: []
+      reviews: [],
+      userId: ""
     }
     this.addNewReview = this.addNewReview.bind(this)
   }
@@ -33,7 +34,8 @@ class BeerShow extends Component {
         rating: body.beer.avg_score,
         id: body.beer.id,
         style: body.beer.type_name,
-        abv: body.beer.abv
+        abv: body.beer.abv,
+        userId: body.beer.current_user.id
       })
     })
   }

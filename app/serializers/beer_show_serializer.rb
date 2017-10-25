@@ -1,5 +1,5 @@
 class BeerShowSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :abv, :avg_score, :type_id, :type_name
+  attributes :id, :name, :description, :abv, :avg_score, :type_id, :type_name, :current_user
 
   belongs_to :brewery
 
@@ -10,4 +10,5 @@ class BeerShowSerializer < ActiveModel::Serializer
   def type_id
     object.type.id
   end
+
 end
