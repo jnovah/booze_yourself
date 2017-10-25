@@ -15,11 +15,12 @@ describe('Home', () => {
   it('should have a specified initial state', () => {
     expect(wrapper.state()).toEqual({
         beers:[
-          {beerName: "Bud Light",
+          {name: "Bud Light",
           brewery: "Busch",
-          rating: 2, id: 1}, {beerName: "Bud",
+          rating: 2, id: 1}, {name: "Bud",
           brewery: "Busch",
-          rating: 2, id: 2}]
+          rating: 2, id: 2}],
+          search_value: ''
     })
   })
 
@@ -29,6 +30,14 @@ describe('Home', () => {
 
   it('should render a NewestBeersTile component', () => {
     expect(wrapper.find(NewestBeersTile)).toBePresent();
+  })
+
+  it('should have a search bar', () => {
+    expect(wrapper.find("input")).toBePresent();
+  })
+
+  it( 'search bar should affect text field and tables', () => {
+    expect(wrapper.find('input').text()).toEqual('')
   })
 
 })

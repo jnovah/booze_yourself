@@ -4,9 +4,9 @@ import { shallow, mount, render } from 'enzyme';
 describe('TopBeersTile', () => {
   let wrapper;
   let beers = [
-    {beerName: "Bud Light",
+    {name: "Bud Light",
     brewery: "Busch",
-    rating: 2}, {beerName: "Bud",
+    rating: 2}, {name: "Bud",
     brewery: "Busch",
     rating: 2}]
 
