@@ -16,15 +16,21 @@ class BeersIndex extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch('/api/v1/beers')
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ beers: body.beers })
+    })
+  }
+
   render(){
-
-
       let beers = this.state.beers.map(beer =>{
         let path = `/beers/${beer.id}`
         return(
           <BeersTile
             path={path}
-            beerName={beer.beerName}
+            beerName={beer.name}
             brewery={beer.brewery}
             rating={beer.rating}
             id={beer.id}
@@ -34,8 +40,6 @@ class BeersIndex extends Component {
       })
 
     return(
-      <Switch>
-      <Route path={'/beers/:id'} component={BeerShow} key={3} />
       <div className='index'>
         <h1 className='all'>All Beers</h1>
         <table className='all-beer-table'>
@@ -51,7 +55,6 @@ class BeersIndex extends Component {
           </tbody>
         </table>
       </div>
-      </Switch>
     )
   }
 }
