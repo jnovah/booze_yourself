@@ -1,0 +1,102 @@
+import React, { Component } from 'react'
+import FormInput from '../Components/FormInput'
+
+class BeerForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      beerName: '',
+      abv: '',
+      availability: '',
+      description: '',
+      type: '',
+      breweryName: '',
+      breweryWebsite: ''
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleChange(event) {
+    let name = event.target.name
+    let value = event.target.value
+    this.setState({ [name]: value })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let formPayLoad = {
+      beer_name: this.state.beerName,
+      abv: this.state.abv,
+      availability: this.state.availability,
+      description: this.state.description,
+      type: this.state.type,
+      brewery_name: this.state.breweryName,
+      brewery_website: this.state.breweryWebsite };
+    if (this.state.beerName !== '' && this.state.breweryName !== '') {
+      this.setState({
+      beerName: '',
+      abv: '',
+      availability: '',
+      description: '',
+      type: '',
+      breweryName: '',
+      breweryWebsite: ''
+      })
+      this.props.addNewBeer(formPayLoad);
+    }
+  }
+
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <FormInput
+          key='beerName'
+          name='beerName'
+          label='Beer Name'
+          value={this.state.beerName}
+          handleChange={this.handleChange}
+        />
+        <FormInput
+          key='type'
+          name='type'
+          label='Beer Type'
+          value={this.state.type}
+          handleChange={this.handleChange}
+        />
+        <FormInput
+          key='abv'
+          name='abv'
+          label='ABV'
+          value={this.state.abv}
+          handleChange={this.handleChange}
+        />
+        <FormInput
+          key='availability'
+          name='availability'
+          label='Availability'
+          value={this.state.availability}
+          handleChange={this.handleChange}
+        />
+      <label htmlFor={'description'}>Description<input type="text" id='description' name='description' onChange={this.handleChange} value={this.state.description} /></label>
+        <FormInput
+          key='breweryName'
+          name='breweryName'
+          label='Brewery Name'
+          value={this.state.breweryName}
+          handleChange={this.handleChange}
+        />
+        <FormInput
+          key='breweryWebsite'
+          name='breweryWebsite'
+          label='Brewery Website URL'
+          value={this.state.breweryWebsite}
+          handleChange={this.handleChange}
+        />
+        <input type="submit" className="button" onSubmit={this.handleSubmit}/>
+      </form>
+    )
+  }
+}
+
+export default BeerForm

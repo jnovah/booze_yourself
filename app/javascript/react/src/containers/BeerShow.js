@@ -29,12 +29,23 @@ class BeerShow extends Component {
       return response.json()
     })
     .then(body => {
+      let rating = 0
+      let iterations = 0
+      body.reviews.forEach((review) => {
+        iterations += 1;
+        rating += parseInt(review.rating);
+      })
+      if(iterations) {
+        rating = (rating / iterations).toFixed(1)
+      } else {
+        rating = 'No Ratings'
+      }
       this.setState({
         name: body.beer.name,
         description: body.beer.description,
         brewery: body.brewery.name,
         breweryLink: body.brewery.website,
-        rating: body.beer.avg_score,
+        rating: rating,
         id: body.beer.id,
         style: body.beer.type_name,
         abv: body.beer.abv,
@@ -55,9 +66,7 @@ class BeerShow extends Component {
       return response.json()
     })
     .then(body => {
-      let updateReviews = this.state.reviews
-      updateReviews.push(body)
-      this.setState({ reviews: updateReviews });
+      this.setState({ reviews: [...this.state.reviews, body] });
     })
   }
 
@@ -68,6 +77,7 @@ class BeerShow extends Component {
     } else {
       button = <a href='/users/sign_in' key={`navbar-${4}`} className=''>Sign in to add a review!</a>
     }
+
     return(
       <div className="grid-x">
         <div className="large-12 medium-10 small-6 cell">

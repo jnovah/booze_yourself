@@ -3,13 +3,15 @@ import { NavLink, Route, Switch } from 'react-router-dom'
 import ReviewTile from '../Components/ReviewTile'
 
 const ReviewsIndex = props => {
-  let reviews = props.reviews.map(review => {
+  let reviews = props.reviews.reverse()
+  reviews = props.reviews.map(review => {
     if (review.avatar.url === null ) {
       review.avatar.url = ''
     }
+
     return(
       <ReviewTile
-        key={review.beer_id}
+        key={review.created_at}
         avatar={review.avatar.url}
         username={review.username}
         description={review.description}

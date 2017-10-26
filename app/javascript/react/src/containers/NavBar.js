@@ -6,7 +6,8 @@ class NavBar extends Component {
     super(props)
     this.state = {
       username: '',
-      signedIn: false
+      signedIn: false,
+      avatar: ''
     }
   }
 
@@ -17,7 +18,7 @@ class NavBar extends Component {
     headers: {"Content-Type": "application/json"}})
     .then(response => response.json())
     .then(body => {
-      this.setState({ username: body.username, signedIn: body.signed_in })
+      this.setState({ username: body.username, signedIn: body.signed_in, avatar: body.avatar })
     })
   }
 
@@ -25,7 +26,7 @@ class NavBar extends Component {
   render() {
     let button;
     if (this.state.signedIn) {
-      button = <div>Welcome {this.state.username} <a href='/users/sign_out' key={`navbar-${4}`} className='sign-in'>Sign Out</a></div>
+      button = <div>Welcome {this.state.username} <img className='banner-profile-pic' src={`${this.state.avatar}`}></img><a href='/users/sign_out' key={`navbar-${4}`} className='sign-in'>Sign Out</a></div>
     } else {
       button =<a href='/users/sign_in' key={`navbar-${4}`} className='sign-in'>Sign In</a>
     }

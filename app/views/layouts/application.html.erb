@@ -9,11 +9,6 @@
   </head>
 
   <body>
-
-    <% if user_signed_in? %>
-      <div><%= image_tag current_user.avatar %></div>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>

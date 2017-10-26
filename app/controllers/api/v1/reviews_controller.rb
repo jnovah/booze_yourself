@@ -13,7 +13,10 @@ class Api::V1::ReviewsController < ApplicationController
   def create
     review = Review.new(review_params)
     if review.save
-      render json: {review: Review.last, user: { avatar: current_user.avatar, username: current_user.username }}
+      review = Review.last
+      entry = { id: review.id, rating: review.rating, description: review.description, username: review.user.username, avatar: review.user.avatar, beer_id: review.beer_id, created_at: review.created_at}
+
+      render json: entry
     end
   end
 
