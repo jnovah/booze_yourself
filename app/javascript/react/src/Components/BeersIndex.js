@@ -1,57 +1,33 @@
 import React, { Component } from 'react'
-import BeersTile from './BeersTile'
-import { Route, Switch } from 'react-router-dom'
-import BeerShow from '../containers/BeerShow'
-
+import { Route } from 'react-router-dom'
+import TertiaryBeersIndex from './TertiaryBeersIndex'
+import BeerForm from '../containers/BeerForm'
 
 class BeersIndex extends Component {
   constructor(props){
     super(props)
-    this.state={beers:[
-      {beerName: "Bud Light",
-      brewery: "Busch",
-      rating: 2, id: 1}, {beerName: "Bud",
-      brewery: "Busch",
-      rating: 2, id: 2}]
+    this.state={
     }
+    this.addNewBeer = this.addNewBeer.bind(this)
   }
 
-  render(){
+  addNewBeer(formPayLoad) {
+    fetch(`/api/v1/payloads`, {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formPayLoad)
+    })
+  }
 
-
-      let beers = this.state.beers.map(beer =>{
-        let path = `/beers/${beer.id}`
-        return(
-          <BeersTile
-            path={path}
-            beerName={beer.beerName}
-            brewery={beer.brewery}
-            rating={beer.rating}
-            id={beer.id}
-            key={beer.id}
-          />
-        )
-      })
-
+  render() {
     return(
-      <Switch>
-      <Route path={'/beers/:id'} component={BeerShow} key={3} />
-      <div className='index'>
-        <h1 className='all'>All Beers</h1>
-        <table className='all-beer-table'>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Brewery</th>
-              <th>Rating</th>
-            </tr>
-          </thead>
-          <tbody>
-            {beers}
-          </tbody>
-        </table>
+      <div>
+        <Route path='/beers/new-beer' render={props => (<BeerForm addNewBeer={this.addNewBeer} {...props} />)} />
+        <Route path='/beers' component={TertiaryBeersIndex} key={2} />
       </div>
-      </Switch>
     )
   }
 }

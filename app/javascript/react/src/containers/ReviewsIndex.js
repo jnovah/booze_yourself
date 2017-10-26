@@ -1,17 +1,19 @@
 import React from 'react'
-import { NavLink, Route, Switch } from 'react-router-dom'
 import ReviewTile from '../Components/ReviewTile'
 
 const ReviewsIndex = props => {
-  let reviews = props.reviews.map(review => {
+  let reviews = props.reviews.reverse()
+  reviews = props.reviews.map(review => {
+    if (review.avatar.url === null ) {
+      review.avatar.url = ''
+    }
     return(
       <ReviewTile
-        key={props.beerId}
-        // avatar={props.avatar}
-        // username={props.username}
+        key={review.created_at}
+        avatar={review.avatar.url}
+        username={review.username}
         description={review.description}
-        rating={review.rating}
-      />
+        rating={review.rating}/>
     )
   })
   return(

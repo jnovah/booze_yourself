@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import NewestBeersTile from '../Components/NewestBeersTile'
 import TopBeersTile from '../Components/TopBeersTile'
-import BeersIndex from '../Components/BeersIndex'
-import { Route, Switch } from 'react-router-dom';
-
 
 class Home extends Component {
   constructor(props) {

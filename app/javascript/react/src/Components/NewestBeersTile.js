@@ -1,15 +1,10 @@
 import React from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
-
 
 const NewestBeersTile = props => {
-
-
   let beers = props.beers.map(beer => {
     return(
-
-      <tr>
-        <td>{beer.name}</td>
+      <tr id='tile'>
+        <td>{beer.beerName}</td>
         <td>{beer.brewery}</td>
         <td>{beer.rating}</td>
       </tr>
@@ -44,4 +39,5 @@ const NewestBeersTile = props => {
     </div>
   )
 }
+
 export default NewestBeersTile

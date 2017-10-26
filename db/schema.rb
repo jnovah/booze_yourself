@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019141009) do
+ActiveRecord::Schema.define(version: 20171026121031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,42 @@ ActiveRecord::Schema.define(version: 20171019141009) do
     t.bigint "type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "brewery_db_id"
     t.index ["availability_id"], name: "index_beers_on_availability_id"
     t.index ["brewery_id"], name: "index_beers_on_brewery_id"
     t.index ["type_id"], name: "index_beers_on_type_id"
     t.index ["user_id"], name: "index_beers_on_user_id"
+  end
+
+  create_table "breweries", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "website"
+    t.string "brewery_db_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payloads", force: :cascade do |t|
+    t.string "beer_name", null: false
+    t.string "abv", null: false
+    t.string "availability"
+    t.text "description", null: false
+    t.string "type", null: false
+    t.string "brewery_name", null: false
+    t.string "brewery_website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "rating", null: false
+    t.string "description"
+    t.bigint "user_id"
+    t.bigint "beer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beer_id"], name: "index_reviews_on_beer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "types", force: :cascade do |t|
