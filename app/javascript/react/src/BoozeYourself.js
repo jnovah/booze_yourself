@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './containers/NavBar'
 import Home from './containers/Home'
-import BeersIndex from './Components/BeersIndex'
 import BeerShow from './containers/BeerShow'
+import BeersIndex from './Components/BeersIndex'
 
 class BoozeYourself extends Component {
   constructor(props) {
@@ -18,15 +18,10 @@ class BoozeYourself extends Component {
     <div>
       <main>
         <NavBar />
-
         <Switch>
-          <Route path='/beers' component={BeersIndex} key={2}>
-            <Switch>
-              <Route exact path='/beers/' component={BeersIndex}></Route>
-              <Route path='/beers/:id' component={BeerShow} key={5}></Route>
-            </Switch>
-          </Route>
-          <Route exact path='/' component={Home} key={1} />
+          <Route path='/beer/:id' component = {BeerShow} />
+          <Route path='/beers' component={BeersIndex} key={2} />
+          <Route exact path='/' component={Home} key={1}></Route>
         </Switch>
       </main>
     </div>

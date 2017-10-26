@@ -73,7 +73,7 @@ class BeerShow extends Component {
   render(){
     let button;
     if (this.state.currentUser) {
-      button = <NavLink to={`/beers/${this.state.id}/new-review`} class="button">Add Review</NavLink>
+      button = <NavLink to={`/beer/${this.state.id}/new-review`} class="button">Add Review</NavLink>
     } else {
       button = <a href='/users/sign_in' key={`navbar-${4}`} className=''>Sign in to add a review!</a>
     }
@@ -105,7 +105,7 @@ class BeerShow extends Component {
         </div>
         <div className="review-box"><span className="review-box-text">Reviews and Ratings</span>
         <Switch>
-          <Route path={`/beers/${this.state.id}/new-review`} render={props => (<ReviewForm addNewReview={this.addNewReview} beerId={this.props.match.params.id} userId={this.state.userId} {...props} />)} />
+          <Route path={`/beer/${this.state.id}/new-review`} render={props => (<ReviewForm addNewReview={this.addNewReview} beerId={this.props.match.params.id} userId={this.state.userId} {...props} />)} />
           {button}
         </Switch>
         <ReviewsIndex reviews={this.state.reviews} beerId={this.state.id}/>
