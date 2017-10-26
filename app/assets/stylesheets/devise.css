@@ -1,0 +1,21 @@
+.user-session-forms {
+  width: 50%;
+  min-width: 1000px;
+  margin-left: 1.5%;
+}
+
+.user-session-field {
+  width: 25%;
+  margin-top: -1.4rem;
+}
+
+.user-session-field.new-password {
+  margin-top: 0.4rem;
+}
+
+.sign-in-button {
+  margin: 0;
+  padding: 0;
+  margin-left: 500px;
+  /*position: absolute;*/
+}

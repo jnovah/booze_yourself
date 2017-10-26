@@ -12,6 +12,8 @@ class Home extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postFetch = this.postFetch.bind(this);
+    this.handleButtonToggle=this.handleButtonToggle.bind(this)
+    this.handleSecondButtonToggle=this.handleSecondButtonToggle.bind(this)
   }
 
   postFetch(formPayload) {
@@ -25,6 +27,7 @@ class Home extends Component {
       this.setState({ beers: body })
     })
   }
+
 
   handleChange(event) {
     let value = event.target.value
@@ -41,7 +44,34 @@ class Home extends Component {
     this.postFetch(formPayload)
   }
 
+
+
+  handleButtonToggle(){
+    if(this.state.buttonToggle){
+      this.setState({ buttonToggle: false})
+    } else {
+      //fetch
+      this.setState({ buttonToggle: true })
+    }
+  }
+
+   handleSecondButtonToggle(){
+     if(this.state.secondButtonToggle){
+       this.setState({ secondButtonToggle: false })
+     } else {
+       //fetch
+       this.setState({ secondButtonToggle: true })
+     }
+   }
   render(){
+  let clicked=''
+  if (this.state.buttonToggle){
+    clicked='clicked'
+  }
+ let secondClicked =''
+  if(this.state.secondButtonToggle){
+    secondClicked='clicked'
+  }
 
     return(
 
@@ -49,9 +79,13 @@ class Home extends Component {
        <div className='header-image' >
         <div className="small-4 small-offset-4 cell">
           <input className='search-bar' placeholder='Search All Beers'></input>
-          <div className="search-button-wrapper">
-            <button className='small-2 small-offset-5 search-button'>Search</button>
-          </div>
+          <span className='search-button-wrapper'>
+            <button onClick={this.handleButtonToggle} className={`${clicked} small-5 small-offset-1 search-button top-twenty`}>Top Twenty Beers</button>
+          </span>
+          <span className="search-button-wrapper">
+            <button onClick={this.handleSecondButtonToggle} className={`${secondClicked} small-5 search-button`}>Newest Beers</button>
+          </span>
+
         </div>
        </div>
         <div>

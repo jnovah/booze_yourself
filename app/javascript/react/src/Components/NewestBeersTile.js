@@ -27,6 +27,13 @@ const NewestBeersTile = props => {
           {beers}
           {beers}
           {beers}
+          {beers}
+          {beers}
+          {beers}
+          {beers}
+          {beers}
+          {beers}
+          {beers}
         </tbody>
       </table>
     </div>
