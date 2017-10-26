@@ -27,7 +27,7 @@ describe('TopBeersTile', () => {
   })
 
   it('should render three th tags with text Name, Brewery and Rating', () => {
-    expect(wrapper.find('TableHeaderColumn').at(0).prop('dataField')).toEqual('name')
+    expect(wrapper.find('TableHeaderColumn').at(0).prop('dataField')).toEqual('beerName')
     expect(wrapper.find('TableHeaderColumn').at(1).prop('dataField')).toEqual('brewery')
     expect(wrapper.find('TableHeaderColumn').at(2).prop('dataField')).toEqual('rating')
   })
