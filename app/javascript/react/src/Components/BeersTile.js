@@ -6,13 +6,9 @@ const BeersTile = props => {
   return(
 
     <tr>
-      <Switch>
-        <Route path={props.path} component={BeerShow} />
-
-      </Switch>
-        <td><NavLink to={props.path}>{props.beerName}</NavLink></td>
-        <td><a target="_blank" href={`${props.brewery.website}`}>{props.brewery.name}</a></td>
-        <td>{props.rating}</td>
+      <td><NavLink to={props.path}>{props.beerName}</NavLink></td>
+      <td><a target="_blank" href={`${props.brewery.website}`}>{props.brewery.name}</a></td>
+      <td>{props.rating}</td>
     </tr>
 
   )
