@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import BeersTile from './BeersTile'
-import { NavLink, Route, Switch } from 'react-router-dom'
-import BeerShow from '../containers/BeerShow'
-
+import { NavLink } from 'react-router-dom'
 
 class TertiaryBeersIndex extends Component {
   constructor(props){
@@ -26,7 +24,6 @@ class TertiaryBeersIndex extends Component {
     })
   }
 
-
   render(){
     let button;
     if (this.state.currentUser) {
@@ -49,27 +46,24 @@ class TertiaryBeersIndex extends Component {
       )
     })
     return(
+      <div className='index'>
+        {button}
+        <h1 className='all'>All Beers</h1>
+        <table className='all-beer-table'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Brewery</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
 
+            {beers}
 
-                  <div className='index'>
-                    {button}
-                    <h1 className='all'>All Beers</h1>
-                    <table className='all-beer-table'>
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Brewery</th>
-                          <th>Rating</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-
-                        {beers}
-
-                      </tbody>
-                    </table>
-                  </div>
-
+          </tbody>
+        </table>
+      </div>
     )
   }
 }

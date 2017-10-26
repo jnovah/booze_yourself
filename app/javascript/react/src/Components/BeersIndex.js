@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import BeersTile from './BeersTile'
-import { NavLink, Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import TertiaryBeersIndex from './TertiaryBeersIndex'
 import BeerForm from '../containers/BeerForm'
 
@@ -12,13 +11,14 @@ class BeersIndex extends Component {
     this.addNewBeer = this.addNewBeer.bind(this)
   }
 
-  addNewBeer(formPayload) {
-    debugger;
-    fetch('/api/v1/payloads.json', {
+  addNewBeer(formPayLoad) {
+    fetch(`/api/v1/payloads`, {
       method: "POST",
-      body: JSON.stringify(formPayload),
       credentials: "same-origin",
-      header: {"Content-Type": "application/json"}
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formPayLoad)
     })
   }
 

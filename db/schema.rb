@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20171026121031) do
 
   create_table "payloads", force: :cascade do |t|
     t.string "beer_name", null: false
-    t.string "abv"
+    t.string "abv", null: false
     t.string "availability"
-    t.text "description"
-    t.string "type"
+    t.text "description", null: false
+    t.string "type", null: false
     t.string "brewery_name", null: false
     t.string "brewery_website"
     t.datetime "created_at", null: false

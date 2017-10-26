@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink, Route, Switch } from 'react-router-dom'
 import ReviewTile from '../Components/ReviewTile'
 
 const ReviewsIndex = props => {
@@ -8,15 +7,13 @@ const ReviewsIndex = props => {
     if (review.avatar.url === null ) {
       review.avatar.url = ''
     }
-
     return(
       <ReviewTile
         key={review.created_at}
         avatar={review.avatar.url}
         username={review.username}
         description={review.description}
-        rating={review.rating}
-      />
+        rating={review.rating}/>
     )
   })
   return(

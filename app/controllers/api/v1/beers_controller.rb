@@ -41,15 +41,4 @@ class Api::V1::BeersController < ApplicationController
     end
     render json: {beer: beer, brewery: beer.brewery, current_user: {status: user_signed_in?, id: current_user.id}, reviews: reviews }.to_json
   end
-
-  # def create
-  #   beer = Beer.new(beer_params)
-  # end
-  #
-  # private
-  #
-  # def beer_params
-  #   binding.pry
-  #   params.require(:beer).permit(:)
-  # end
 end

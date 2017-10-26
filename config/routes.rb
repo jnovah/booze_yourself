@@ -6,11 +6,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :beers
-        resources :reviews
+      resources :beers, only: [:index, :show, :create] do
+        resources :reviews, only: [:index, :create]
+      end
+      resources :payloads, only: [:index, :create]
         resources :breweries
         resources :members
-        resources :payloads
     end
   end
 

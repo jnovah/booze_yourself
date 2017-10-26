@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink, Switch, Route, Redirect } from 'react-router-dom'
+import { NavLink, Switch, Route } from 'react-router-dom'
 import ReviewsIndex from './ReviewsIndex'
 import ReviewForm from './ReviewForm'
 
@@ -55,6 +55,7 @@ class BeerShow extends Component {
       })
     })
   }
+
   addNewReview(formPayLoad) {
     fetch(`/api/v1/beers/${this.props.match.params.id}/reviews.json`, {
       method: "POST",
