@@ -16,6 +16,6 @@ describe('ReviewForm', () => {
   })
 
   it('should render five radio buttons', () => {
-    expect(wrapper.find('input').length).toEqual(7)
+    expect(wrapper.find('input').length).toEqual(6)
   })
 })

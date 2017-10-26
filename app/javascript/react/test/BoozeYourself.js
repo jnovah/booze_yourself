@@ -19,11 +19,11 @@ describe('BoozeYourself', () => {
   })
 
   it('should render two Route components', () => {
-      expect(wrapper.find('Route').length).toEqual(2)
+      expect(wrapper.find('Route').length).toEqual(3)
   })
 
   it('should render a Route component', () => {
-    expect(wrapper.find('Route').at(0).prop('path')).toEqual('/')
+    expect(wrapper.find('Route').at(2).prop('path')).toEqual('/')
     expect(wrapper.find('Route').at(1).prop('path')).toEqual('/beers')
   })
 })
