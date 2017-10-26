@@ -11,7 +11,8 @@ class BeerForm extends Component {
       description: '',
       type: '',
       breweryName: '',
-      breweryWebsite: ''
+      breweryWebsite: '',
+      warning: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -34,7 +35,7 @@ class BeerForm extends Component {
       type: this.state.type,
       brewery_name: this.state.breweryName,
       brewery_website: this.state.breweryWebsite };
-    if (this.state.beerName !== '' && this.state.breweryName !== '') {
+    if (this.state.beerName !== '' && this.state.abv !== '' && this.state.availability !== '' && this.state.description !== '' && this.state.type !== '' && this.state.breweryName !== '') {
       this.setState({
       beerName: '',
       abv: '',
@@ -42,9 +43,12 @@ class BeerForm extends Component {
       description: '',
       type: '',
       breweryName: '',
-      breweryWebsite: ''
+      breweryWebsite: '',
+      warning: ''
       })
       this.props.addNewBeer(formPayLoad);
+    } else {
+      this.setState({ warning: 'Please fill out all fields!' })
     }
   }
 
@@ -52,6 +56,7 @@ class BeerForm extends Component {
     return(
     <div className='grid-x'>
       <form className=' small-4 small-offset-4 new-beer-form'onSubmit={this.handleSubmit}>
+        <p>{this.state.warning}</p>
         <FormInput
           key='beerName'
           name='beerName'

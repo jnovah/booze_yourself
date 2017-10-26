@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class NavBar extends Component {
   constructor(props) {
@@ -22,7 +22,6 @@ class NavBar extends Component {
     })
   }
 
-c
   render() {
     let button;
     if (this.state.signedIn) {

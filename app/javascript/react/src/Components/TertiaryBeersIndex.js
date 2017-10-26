@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import BeersTile from './BeersTile'
-import { NavLink, Route, Switch } from 'react-router-dom'
-import BeerShow from '../containers/BeerShow'
-
+import { NavLink } from 'react-router-dom'
 
 class TertiaryBeersIndex extends Component {
   constructor(props){
@@ -25,7 +23,6 @@ class TertiaryBeersIndex extends Component {
       this.setState({ beers: body.beers, currentUser: body.current_user.status, userId: body.current_user.id })
     })
   }
-
 
   render(){
     let button;

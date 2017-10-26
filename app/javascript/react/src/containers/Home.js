@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import NewestBeersTile from '../Components/NewestBeersTile'
 import TopBeersTile from '../Components/TopBeersTile'
-import BeersIndex from '../Components/BeersIndex'
-import { Route, Switch } from 'react-router-dom';
-
 
 class Home extends Component {
   constructor(props) {
@@ -15,6 +12,8 @@ class Home extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postFetch = this.postFetch.bind(this);
+    this.handleButtonToggle=this.handleButtonToggle.bind(this)
+    this.handleSecondButtonToggle=this.handleSecondButtonToggle.bind(this)
   }
 
   postFetch(formPayload) {
@@ -28,6 +27,7 @@ class Home extends Component {
      this.setState({ beers: body })
    })
  }
+
 
   handleChange(event) {
     let value = event.target.value
@@ -44,7 +44,34 @@ class Home extends Component {
     this.postFetch(formPayload)
   }
 
+
+
+  handleButtonToggle(){
+    if(this.state.buttonToggle){
+      this.setState({ buttonToggle: false})
+    } else {
+      //fetch
+      this.setState({ buttonToggle: true })
+    }
+  }
+
+   handleSecondButtonToggle(){
+     if(this.state.secondButtonToggle){
+       this.setState({ secondButtonToggle: false })
+     } else {
+       //fetch
+       this.setState({ secondButtonToggle: true })
+     }
+   }
   render(){
+  let clicked=''
+  if (this.state.buttonToggle){
+    clicked='clicked'
+  }
+ let secondClicked =''
+  if(this.state.secondButtonToggle){
+    secondClicked='clicked'
+  }
 
     return(
 

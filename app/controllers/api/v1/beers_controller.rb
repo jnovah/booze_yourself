@@ -40,10 +40,7 @@ class Api::V1::BeersController < ApplicationController
   def create
   search_value = params[:search_value]
   beer_search_result = Beer.where("lower(name) LIKE ?", "%#{search_value.downcase}%")
-  # brewery_search_result = Brewery.where("lower(name) LIKE ?", "%#{search_value.downcase}%")
   search_result = beer_search_result.to_json
-  # brewery_search_result = brewery_search_result.json
-  # search_result.concat(brewery_search_result)
   search_result = JSON.parse(search_result)
   render json: search_result
 end

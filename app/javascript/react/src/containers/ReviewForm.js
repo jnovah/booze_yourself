@@ -9,7 +9,8 @@ class ReviewForm extends Component {
     super(props)
     this.state = {
       rating: '',
-      description: ''
+      description: '',
+      warning: ''
     }
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
     this.handleRadioChange = this.handleRadioChange.bind(this)
@@ -28,8 +29,10 @@ class ReviewForm extends Component {
     event.preventDefault()
     let formPayLoad = { rating: this.state.rating, description: this.state.description, beer_id: this.props.beerId, user_id: this.props.userId }
     if (this.state.rating !== '' && this.state.description !== '') {
-      this.setState({ rating: '', description: '' })
+      this.setState({ rating: '', description: '', warning: ''})
       this.props.addNewReview(formPayLoad)
+    } else {
+      this.setState({ warning: 'Please pick a rating and leave a comment!' })
     }
   }
 
