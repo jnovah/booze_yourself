@@ -17,16 +17,16 @@ class Home extends Component {
   }
 
   postFetch(formPayload) {
-    fetch('/api/v1/beers', {
-      method: 'POST',
-      headers: {"Content-Type": 'application/json'},
-      body: JSON.stringify(formPayload)
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ beers: body })
-    })
-  }
+   fetch('/api/v1/beers', {
+     method: 'POST',
+     headers: {"Content-Type": 'application/json'},
+     body: JSON.stringify(formPayload)
+   })
+   .then(response => response.json())
+   .then(body => {
+     this.setState({ beers: body })
+   })
+ }
 
 
   handleChange(event) {
@@ -78,24 +78,17 @@ class Home extends Component {
       <div className='grid-x'>
        <div className='header-image' >
         <div className="small-4 small-offset-4 cell">
-          <input className='search-bar' placeholder='Search All Beers'></input>
-          <span className='search-button-wrapper'>
-            <button onClick={this.handleButtonToggle} className={`${clicked} small-5 small-offset-1 search-button top-twenty`}>Top Twenty Beers</button>
-          </span>
-          <span className="search-button-wrapper">
-            <button onClick={this.handleSecondButtonToggle} className={`${secondClicked} small-5 search-button`}>Newest Beers</button>
-          </span>
-
+          <div className='search-bar'>
+            <input onChange={this.handleChange} value={this.state.search_value} type='search' placeholder='Search All Beers' />
+            <div className="search-button-wrapper">
+            <button onClick={this.handleSubmit} className='small-2 small-offset-5 search-button button'>Search</button>
+          </div>
+          </div>
         </div>
        </div>
         <div>
           <div className='small-6 cell top-beer'>
             <TopBeersTile
-              beers={this.state.beers}
-            />
-          </div>
-          <div className='small-6 cell new-beer'>
-            <NewestBeersTile
               beers={this.state.beers}
             />
           </div>

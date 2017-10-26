@@ -14,9 +14,9 @@ describe('ReviewTile', () => {
     )
   })
 
-  it('should render six div element', () => {
+  it('should render eight div element', () => {
     expect(wrapper.find('div')).toBePresent()
-    expect(wrapper.find('div').length).toEqual(6)
+    expect(wrapper.find('div').length).toEqual(8)
   })
 
 

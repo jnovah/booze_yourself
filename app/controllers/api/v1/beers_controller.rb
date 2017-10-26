@@ -1,16 +1,11 @@
 require "json"
 
 class Api::V1::BeersController < ApplicationController
+  skip_before_action :verify_authenticity_token
     protect_from_forgery unless: -> { request.format.json? }
-  before_action :authenticate_user!, only: [:show, :create]
+  # before_action :authenticate_user!, only: [:show, :create]
 
   def index
-    # beerList = $brewery_db.beers.all
-    # Beer.all.each do |beer|
-    #   brewery = JSON.parse($brewery_db.brewery("DYA1CI").beers)
-    #   our_brewery = Brewery.create!(name: brewery.name, website: brewery.website, brewery_db_id: brewery.id)
-    #   beer.brewery_id = our_brewery.id
-    # end
     beer_array = []
     beers = Beer.all.limit(22)
     beers.each do |beer|
@@ -41,4 +36,12 @@ class Api::V1::BeersController < ApplicationController
     end
     render json: {beer: beer, brewery: beer.brewery, current_user: {status: user_signed_in?, id: current_user.id}, reviews: reviews }.to_json
   end
+
+  def create
+  search_value = params[:search_value]
+  beer_search_result = Beer.where("lower(name) LIKE ?", "%#{search_value.downcase}%")
+  search_result = beer_search_result.to_json
+  search_result = JSON.parse(search_result)
+  render json: search_result
+end
 end

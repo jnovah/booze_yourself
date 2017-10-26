@@ -11,7 +11,7 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(review_params)
+      review = Review.new(review_params)
     if review.save
       review = Review.last
       entry = { id: review.id, rating: review.rating, description: review.description, username: review.user.username, avatar: review.user.avatar, beer_id: review.beer_id, created_at: review.created_at}

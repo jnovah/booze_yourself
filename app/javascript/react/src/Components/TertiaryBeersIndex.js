@@ -27,7 +27,7 @@ class TertiaryBeersIndex extends Component {
   render(){
     let button;
     if (this.state.currentUser) {
-      button = <NavLink to='/beers/new-beer' class="button" key={5}>Add a Beer</NavLink>
+      button = <NavLink to='/beers/new-beer' class="button add-beer" key={5}>Add a Beer</NavLink>
     } else {
       button = <a href='/users/sign_in' key={`navbar-${4}`} className=''>Sign in to add a beer!</a>
     }
@@ -45,25 +45,27 @@ class TertiaryBeersIndex extends Component {
           />
       )
     })
+
     return(
-      <div className='index'>
-        {button}
-        <h1 className='all'>All Beers</h1>
+      <div className="grid-x">
+        <div className='index'>
+          <div className=' add-beer-text'>Don't see a beer? Feel free to add one!</div>
+          <p className="small-2 small-offset-5 add-beer-button">{button}</p>
+
         <table className='all-beer-table'>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Brewery</th>
-              <th>Rating</th>
+              <th className="beer-table-header">Name</th>
+              <th className="beer-table-header">Brewery</th>
+              <th className="beer-table-header">Rating</th>
             </tr>
           </thead>
           <tbody>
-
             {beers}
-
           </tbody>
         </table>
       </div>
+    </div>
     )
   }
 }

@@ -19,16 +19,44 @@ background-color:#F2B469;
   color: #F2EAC1;
 }
 
+.home:hover {
+  color: white;
+}
+
+.home:focus {
+  color: #F2EAC1;
+}
+
 .beers{
   float: left;
   margin-left: 30px;
   color: #F2EAC1;
 }
 
+.beers:hover {
+  color: white;
+}
+
+.beers:focus {
+  color: #F2EAC1;
+}
+
+.welcome{
+  padding-right: 85px;
+  color:#F2EAC1;
+}
+
 
 .sign-in{
   float: right;
-  margin-right: 30px;
+  color: #F2EAC1;
+}
+
+.sign-in:hover {
+  color: white;
+}
+
+.sign-in:focus {
   color: #F2EAC1;
 }
 
@@ -47,24 +75,26 @@ background-color:#F2B469;
 
 
 .search-button {
-  margin: 2em auto;
-  text-align: center;
-  padding: 1em;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px;
   background-color: #053A5D;
   color: #F2EAC1;
 }
 
 .search-bar {
-  border: solid #053A5D;
-  background-color: #F2EAC1;
-  border-radius: 100px;
+  // border: solid #053A5D;
+  // background-color: #F2EAC1;
+  // border-radius: 100px;
   width: 100%;
   height: 45px;
-  margin-top: 250px;
+  // margin-top: 250px;
+  padding-top: 200px;
 }
 
 .banner-profile-pic {
   height: 2rem;
+}
 
 .search-button.clicked {
   background: black;
