@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import FormInput from '../Components/FormInput'
 
+
+
+
 class ReviewForm extends Component {
   constructor(props) {
     super(props)
@@ -33,23 +36,16 @@ class ReviewForm extends Component {
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
-        <div className='row' onChange={this.handleRadioChange}>
-          <label className="small-1 column">
-            1 <input type="radio" name='rating' value="1"/>
-          </label>
-          <label className="small-1 column">
-            2 <input type="radio" name='rating' value="2"/>
-          </label>
-          <label className="small-1 column">
-            3 <input type="radio" name='rating' value="3" />
-          </label>
-          <label className="small-1 column">
-            4 <input type="radio" name='rating' value="4" />
-          </label>
-          <label className="small-1 column">
-            5 <input type="radio" name='rating' value="5" />
+        <div className='grid-x' onChange={this.handleRadioChange}>
+          <label className="small-4 cell">
+            1  &nbsp;<input type="radio" name='rating' value="1"/> &nbsp;
+            2  &nbsp;<input type="radio" name='rating' value="2"/> &nbsp;
+            3  &nbsp;<input type="radio" name='rating' value="3" /> &nbsp;
+            4  &nbsp;<input type="radio" name='rating' value="4" /> &nbsp;
+            5  &nbsp;<input type="radio" name='rating' value="5" /> &nbsp;
           </label>
         </div>
+        <div className='small-6 cell'>
         <FormInput
           key='description'
           name='description'
@@ -57,7 +53,10 @@ class ReviewForm extends Component {
           value={this.state.description}
           handleChange={this.handleDescriptionChange}
         />
-        <input type="submit" className="button" onSubmit={this.handleSubmit}/>
+      </div>
+      <div onClick={this.handleSubmit}>
+        <a href='/' className="submit-button button">Submit</a>
+      </div>
       </form>
     )
   }

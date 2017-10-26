@@ -18,16 +18,16 @@ class Home extends Component {
   }
 
   postFetch(formPayload) {
-    fetch('/api/v1/beers', {
-      method: 'POST',
-      headers: {"Content-Type": 'application/json'},
-      body: JSON.stringify(formPayload)
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({ beers: body })
-    })
-  }
+   fetch('/api/v1/beers', {
+     method: 'POST',
+     headers: {"Content-Type": 'application/json'},
+     body: JSON.stringify(formPayload)
+   })
+   .then(response => response.json())
+   .then(body => {
+     this.setState({ beers: body })
+   })
+ }
 
   handleChange(event) {
     let value = event.target.value
@@ -51,20 +51,17 @@ class Home extends Component {
       <div className='grid-x'>
        <div className='header-image' >
         <div className="small-4 small-offset-4 cell">
-          <input className='search-bar' placeholder='Search All Beers'></input>
-          <div className="search-button-wrapper">
-            <button className='small-2 small-offset-5 search-button'>Search</button>
+          <div className='search-bar'>
+            <input onChange={this.handleChange} value={this.state.search_value} type='search' placeholder='Search All Beers' />
+            <div className="search-button-wrapper">
+            <button onClick={this.handleSubmit} className='small-2 small-offset-5 search-button button'>Search</button>
+          </div>
           </div>
         </div>
        </div>
         <div>
           <div className='small-6 cell top-beer'>
             <TopBeersTile
-              beers={this.state.beers}
-            />
-          </div>
-          <div className='small-6 cell new-beer'>
-            <NewestBeersTile
               beers={this.state.beers}
             />
           </div>

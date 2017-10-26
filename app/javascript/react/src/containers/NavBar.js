@@ -22,11 +22,12 @@ class NavBar extends Component {
     })
   }
 
-
+c
   render() {
     let button;
     if (this.state.signedIn) {
-      button = <div>Welcome {this.state.username} <img className='banner-profile-pic' src={`${this.state.avatar}`}></img><a href='/users/sign_out' key={`navbar-${4}`} className='sign-in'>Sign Out</a></div>
+      button = <div><span className='welcome'>Welcome {this.state.username} <img className='banner-profile-pic' src={`${this.state.avatar}`}></img></span>
+      <span><a href='/users/sign_out' key={`navbar-${4}`} className='sign-in'>Sign Out</a></span></div>
     } else {
       button =<a href='/users/sign_in' key={`navbar-${4}`} className='sign-in'>Sign In</a>
     }

@@ -6,9 +6,9 @@ const BeersTile = props => {
   return(
 
     <tr>
-      <td><NavLink to={props.path}>{props.beerName}</NavLink></td>
-      <td><a target="_blank" href={`${props.brewery.website}`}>{props.brewery.name}</a></td>
-      <td>{props.rating}</td>
+      <td className="beer-table-body"><NavLink to={props.path}>{props.beerName}</NavLink></td>
+      <td className="beer-table-body"><a target="_blank" href={`${props.brewery.website}`}>{props.brewery.name}</a></td>
+      <td className="beer-table-body">{props.rating}</td>
     </tr>
 
   )

@@ -11,16 +11,36 @@ class TopBeersTile extends Component {
   }
 
   render(){
-    return(
-      <div className="top-table">
-        Top 20 Beers
-        <BootstrapTable className="table-responsive" ref='table' data={ this.props.beers } >
-              <TableHeaderColumn  className="table-header" dataField='beerName' isKey={ true } dataSort={ true }>Beer</TableHeaderColumn>
-              <TableHeaderColumn className="table-header" dataField='brewery' dataSort={ true }>Brewery</TableHeaderColumn>
-              <TableHeaderColumn className="table-header" dataField='rating'>Rating</TableHeaderColumn>
-          </BootstrapTable>
+
+      let beers = this.props.beers.map(beer => {
+        return(
+          <tr id='tile'>
+            <td>{beer.beerName}</td>
+            <td>{beer.brewery}</td>
+            <td>{beer.rating}</td>
+          </tr>
+        )
+      })
+      return(
+        <div>
+        <h4 className='top-beer-text'>BEERS</h4>
+        <div className="new-table">
+          <table className="table-header">
+            <thead className='table-header'>
+              <tr>
+                <th>Name</th>
+                <th>Brewery</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {beers}
+            </tbody>
+          </table>
+        </div>
       </div>
-    )
+      )
   }
 }
 export default TopBeersTile

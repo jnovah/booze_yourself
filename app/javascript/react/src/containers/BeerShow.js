@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { NavLink, Switch, Route, Redirect } from 'react-router-dom'
+import { browserHistory, NavLink, Switch, Route, Redirect, push } from 'react-router-dom'
 import ReviewsIndex from './ReviewsIndex'
 import ReviewForm from './ReviewForm'
+
 
 class BeerShow extends Component {
   constructor(props){
@@ -55,8 +56,9 @@ class BeerShow extends Component {
       })
     })
   }
+
   addNewReview(formPayLoad) {
-    fetch(`/api/v1/beers/${this.props.match.params.id}/reviews.json`, {
+    fetch(`/api/v1/reviews`, {
       method: "POST",
       body: JSON.stringify(formPayLoad),
       credentials: "same-origin",
@@ -73,18 +75,17 @@ class BeerShow extends Component {
   render(){
     let button;
     if (this.state.currentUser) {
-      button = <NavLink to={`/beer/${this.state.id}/new-review`} class="button">Add Review</NavLink>
+      button = <NavLink to={`/beer/${this.state.id}/new-review`} class="add-review button">Add Review</NavLink>
     } else {
       button = <a href='/users/sign_in' key={`navbar-${4}`} className=''>Sign in to add a review!</a>
     }
 
     return(
-      <div className="grid-x">
+      <div className=" parent grid-x">
         <div className="large-12 medium-10 small-6 cell">
           <h1 className="beer-header">
-            <div className="small-8 cell" id="beer-name">{this.state.name}</div>
-            <span id="brewery"> | {this.state.brewery}</span>
-            <div className="small-4 cell" id="rating">Rating: {this.state.rating}</div>
+            <div className="small-7 cell" id="beer-name">{this.state.name} | {this.state.brewery}</div>
+            <div className="small-3 cell" id="rating">Rating: {this.state.rating}</div>
           </h1>
             <div className="horizontal-line"></div>
         </div>
@@ -96,10 +97,8 @@ class BeerShow extends Component {
             </div>
               <div className="ABV">ABV:</div>
               <div className="ABV%">{this.state.abv}%</div>
-              <div className="style">Style:</div>
-              <div className="style-text"> {this.state.style}</div>
               <div className="style">Description:</div>
-              <div className="style-text"> {this.state.description}</div>
+              <div className="small-10 cell style-text"> {this.state.description}</div>
           </div>
           <div className="horizontal-line"></div>
         </div>

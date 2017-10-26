@@ -24,6 +24,7 @@ class BeerForm extends Component {
   }
 
   handleSubmit(event) {
+    debugger
     event.preventDefault();
     let formPayLoad = {
       beer_name: this.state.beerName,
@@ -49,7 +50,8 @@ class BeerForm extends Component {
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
+    <div className='grid-x'>
+      <form className=' small-4 small-offset-4 new-beer-form'onSubmit={this.handleSubmit}>
         <FormInput
           key='beerName'
           name='beerName'
@@ -78,7 +80,7 @@ class BeerForm extends Component {
           value={this.state.availability}
           handleChange={this.handleChange}
         />
-      <label htmlFor={'description'}>Description<input type="text" id='description' name='description' onChange={this.handleChange} value={this.state.description} /></label>
+      <label htmlFor={'description'}>Description<textarea type="text" id='description' name='description' onChange={this.handleChange} value={this.state.description} /></label>
         <FormInput
           key='breweryName'
           name='breweryName'
@@ -93,8 +95,9 @@ class BeerForm extends Component {
           value={this.state.breweryWebsite}
           handleChange={this.handleChange}
         />
-        <input type="submit" className="button" onSubmit={this.handleSubmit}/>
+        <input type="submit" className="beer-form-submit button" onSubmit={this.handleSubmit}/>
       </form>
+    </div>
     )
   }
 }
