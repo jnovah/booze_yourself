@@ -1,33 +1,73 @@
 .top-bar {
+  width: 97%;
+  position: fixed;
   text-align: center;
-  margin: 20px;
+  margin-left: 1.5%;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #053A5D;
 }
 
-.breadcrumbs {
-  margin: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+//F2EAC1
+
+body{
+background-color:#F2B469;
+
 }
-
-
 .home {
   float: left;
+  color: #F2EAC1;
 }
 
 .beers{
-  margin-right: 25px;
+  float: left;
+  margin-left: 30px;
+  color: #F2EAC1;
 }
 
-.breweries{
-  margin-left: 25px;
-}
+
 .sign-in{
   float: right;
+  margin-right: 30px;
+  color: #F2EAC1;
 }
 
-#search-button {
-  margin-left: 50%;
-  margin-right: 50%;
+.header-image{
+
+  padding-bottom: 190px;
+  padding-top: -50px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url(https://silvereagle.com/wp-content/uploads/2017/01/brewvino.jpg);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+
+.search-button {
+  margin: 2em auto;
+  text-align: center;
+  padding: 1em;
+  background-color: #053A5D;
+  color: #F2EAC1;
+}
+
+.search-bar {
+  border: solid #053A5D;
+  background-color: #F2EAC1;
+  border-radius: 100px;
+  width: 100%;
+  height: 45px;
+  margin-top: 250px;
+}
+
+.search-button.clicked {
+  background: black;
+
+}
+
+.search-button.top-twenty {
+  border-right: 1px solid #F2EAC1;
 }

@@ -1,17 +1,24 @@
 
-
 .top-beer {
   margin-left: 200px;
   width: 25%;
   border: 3px solid #2681B8;
   padding: 10px;
+  float: left;
+  background-color: #F2B469;
+
+
 }
 
+#tile {
+  background: black;
+}
 .new-beer {
   margin-right: 200px;
   width: 25%;
   border: 3px solid #2681B8;
   padding: 10px;
+  float: right;
 }
 
 .index{
@@ -26,5 +33,15 @@
 }
 .all-beer-table{
   margin: auto;
+}
 
+.table-header {
+background-color: red;
+
+}
+
+.table {
+  border: 0px;
+  background-color: blue;
+  margin-bottom: 0px;
 }
