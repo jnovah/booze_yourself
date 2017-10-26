@@ -8,20 +8,45 @@ import { Route, Switch } from 'react-router-dom';
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {beers:[
-      {beerName: "Bud Light",
-      brewery: "Busch",
-      rating: 2, id: 1}, {beerName: "Bud",
-      brewery: "Busch",
-      rating: 2, id: 2}],
-      buttonToggle: false,
-      secondButtonToggle: false
+    this.state = {
+      beers:[],
+      search_value: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.postFetch = this.postFetch.bind(this);
     this.handleButtonToggle=this.handleButtonToggle.bind(this)
     this.handleSecondButtonToggle=this.handleSecondButtonToggle.bind(this)
-
-
   }
+
+  postFetch(formPayload) {
+    fetch('/api/v1/beers', {
+      method: 'POST',
+      headers: {"Content-Type": 'application/json'},
+      body: JSON.stringify(formPayload)
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ beers: body })
+    })
+  }
+
+
+  handleChange(event) {
+    let value = event.target.value
+    this.setState( { search_value: value })
+    if (this.state.search_value.length > 1) {
+      let formPayload = { search_value: this.state.search_value }
+      this.postFetch(formPayload)
+    }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    let formPayload = { search_value: this.state.search_value }
+    this.postFetch(formPayload)
+  }
+
 
 
   handleButtonToggle(){
@@ -41,8 +66,6 @@ class Home extends Component {
        this.setState({ secondButtonToggle: true })
      }
    }
-
-
   render(){
   let clicked=''
   if (this.state.buttonToggle){
@@ -65,6 +88,7 @@ class Home extends Component {
           <span className="search-button-wrapper">
             <button onClick={this.handleSecondButtonToggle} className={`${secondClicked} small-5 search-button`}>Newest Beers</button>
           </span>
+
         </div>
        </div>
         <div>

@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'carrierwave', '~> 1.0'
 gem 'fog'
 gem 'foundation-rails'
+gem 'json'
 
 group :development do
   gem 'listen', '~> 3.0.5'

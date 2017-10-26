@@ -20,6 +20,7 @@ class TopBeersTile extends Component {
               <TableHeaderColumn className="table-header" dataField='rating'>Rating</TableHeaderColumn>
           </BootstrapTable>
       </div>
+
     )
   }
 }
