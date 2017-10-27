@@ -58,7 +58,7 @@ class BeerShow extends Component {
   }
 
   addNewReview(formPayLoad) {
-    fetch(`/api/v1/reviews`, {
+    fetch(`/api/v1/beers/${this.props.match.params.id}/reviews.json`, {
       method: "POST",
       body: JSON.stringify(formPayLoad),
       credentials: "same-origin",

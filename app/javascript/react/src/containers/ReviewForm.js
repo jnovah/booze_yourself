@@ -39,6 +39,7 @@ class ReviewForm extends Component {
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
+        <p>{this.state.warning}</p>
         <div className='grid-x' onChange={this.handleRadioChange}>
           <label className="small-4 cell">
             1  &nbsp;<input type="radio" name='rating' value="1"/> &nbsp;

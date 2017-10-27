@@ -12,7 +12,7 @@ class BeersIndex extends Component {
   }
 
   addNewBeer(formPayLoad) {
-    fetch(`/api/v1/payloads`, {
+    fetch(`/api/v1/payloads.json`, {
       method: "POST",
       credentials: "same-origin",
       headers: {
@@ -20,13 +20,21 @@ class BeersIndex extends Component {
       },
       body: JSON.stringify(formPayLoad)
     })
+    .then(response => {
+      return response.json();
+    })
+    .then(body => {
+      if(body.beer) {
+        this.setState( { newestBeer: body.beer })
+      }
+    })
   }
 
   render() {
     return(
       <div>
         <Route path='/beers/new-beer' render={props => (<BeerForm addNewBeer={this.addNewBeer} {...props} />)} />
-        <Route path='/beers' component={TertiaryBeersIndex} key={2} />
+        <Route path='/beers' component={TertiaryBeersIndex} />
       </div>
     )
   }
