@@ -9,7 +9,7 @@
   font-size: 30px;
 }
 .review-tile{
-  padding-bottom: 15px
+  margin-top: 3rem;
 }
 
 .grid-x {
@@ -52,12 +52,10 @@
 }
 
 .submit-button{
-  // background-color: #053A5D;
+  background-color: #053A5D;
   color: #F2EAC1;
   padding: 10px;
   border-color:#053A5D;
-  background-color: red;
-
 }
 .hidden-div{
   background-color: blue;
@@ -110,5 +108,12 @@
 
 .button:hover {
   background-color: #053A5D;
+}
 
+.review-profile-pic {
+  height: 3rem;
+}
+
+.review-tile-user-info {
+  margin-left: -5rem;
 }
