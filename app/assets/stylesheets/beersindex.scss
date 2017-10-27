@@ -3,8 +3,6 @@
   width: 50%;
   border: 5px solid #053A5D;
   padding: 35px;
-
-
 }
 
 .add-beer-text {
@@ -44,6 +42,9 @@ color: #F2EAC1;
 .beer-table-header {
   background-color: #053A5D;
   color: #F2EAC1;
+  text-align: center;
+  border-style: solid;
+  border-color: #053A5D;
 }
 
 .beer-table-body {
@@ -54,4 +55,23 @@ color: #F2EAC1;
   padding-top: 50px;
   padding-bottom: 80px;
 
+}
+
+.search-index {
+  margin-top: 25%;
+  margin-bottom: 100px;
+  background-color: red;
+  // width: 50%;
+  // border: 5px solid #053A5D;
+  // padding-left: 29%
+}
+
+.beer-table-results {
+background-color: #053A5D;
+color: #F2EAC1;
+text-align: center;
+border-style: solid;
+border-color: #053A5D;
+// display: flex;
+// justify-content: center;
 }

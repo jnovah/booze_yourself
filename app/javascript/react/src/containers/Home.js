@@ -85,13 +85,15 @@ class Home extends Component {
           </div>
           </div>
         </div>
-       </div>
         <div>
+          <div className="grid-x">
           <div className='small-6 cell top-beer'>
             <TopBeersTile
               beers={this.state.beers}
             />
           </div>
+          </div>
+        </div>
         </div>
       </div>
     )
