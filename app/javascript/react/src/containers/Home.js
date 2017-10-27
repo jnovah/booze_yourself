@@ -80,13 +80,8 @@ class Home extends Component {
         <div className="small-4 small-offset-4 cell">
           <div className='search-bar'>
             <input onChange={this.handleChange} value={this.state.search_value} type='search' placeholder='Search All Beers' />
-            <div className="search-button-wrapper">
-            <button onClick={this.handleSubmit} className='small-4 small-offset-4 search-button button'>Search</button>
-          </div>
           </div>
         </div>
-       </div>
-        <div>
           <div className='small-6 cell top-beer'>
             <TopBeersTile
               beers={this.state.beers}

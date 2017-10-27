@@ -1,43 +1,39 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter, NavLink } from 'react-router-dom'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-class TopBeersTile extends Component {
-  constructor(props){
-    super(props)
+const TopBeersTile = props => {
+
+  let beers = props.beers.map(beer => {
+    let path = `/beer/${beer.id}`
+    return(
+      <tr id='tile'>
+        <td className="beer-table-body"><NavLink to={path}>{beer.name}</NavLink></td>
+      </tr>
+    )
+  })
+
+  let existence = ''
+  if (beers.length == 0) {
+    existence = 'no-content'
   }
-
-  render(){
-
-      let beers = this.props.beers.map(beer => {
-        return(
-          <tr id='tile'>
-            <td>{beer.beerName}</td>
-            <td>{beer.brewery}</td>
-            <td>{beer.rating}</td>
-          </tr>
-        )
-      })
-      return(
-        <div>
-        <h4 className='top-beer-text'>BEERS</h4>
-        <div className="new-table">
-          <table className="table-header">
-            <thead className='table-header'>
-              <tr>
-                <th>Name</th>
-                <th>Brewery</th>
-                <th>Rating</th>
+  return(
+      <div className={existence}>
+        <div className="grid-x">
+          <div className='small-8 cell small-offset-8 search-index'>
+          <table className='beer-table-results'>
+            <thead>
+              <tr className="small-6 cell offset-3 beer-table-results">
+                <th className="title-cell">Name</th>
               </tr>
             </thead>
-
             <tbody>
               {beers}
             </tbody>
           </table>
         </div>
       </div>
-      )
-  }
+    </div>
+    )
 }
 export default TopBeersTile
