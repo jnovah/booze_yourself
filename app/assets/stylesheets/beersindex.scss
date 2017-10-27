@@ -60,11 +60,15 @@ color: #F2EAC1;
 .search-index {
   margin-top: 25%;
   margin-bottom: 100px;
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  // background-color: red;
   // width: 50%;
   // border: 5px solid #053A5D;
   // padding-left: 29%
 }
+
+
 
 .beer-table-results {
 background-color: #053A5D;

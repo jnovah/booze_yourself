@@ -12,13 +12,19 @@ const TopBeersTile = props => {
       </tr>
     )
   })
+
+  let existence = ''
+  if (beers.length == 0) {
+    existence = 'no-content'
+  }
   return(
+      <div className={existence}>
         <div className="grid-x">
           <div className='small-8 cell small-offset-8 search-index'>
           <table className='beer-table-results'>
             <thead>
               <tr className="small-6 cell offset-3 beer-table-results">
-                <th>Name</th>
+                <th className="title-cell">Name</th>
               </tr>
             </thead>
             <tbody>
@@ -27,6 +33,7 @@ const TopBeersTile = props => {
           </table>
         </div>
       </div>
+    </div>
     )
 }
 export default TopBeersTile
