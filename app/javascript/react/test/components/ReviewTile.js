@@ -16,12 +16,12 @@ describe('ReviewTile', () => {
 
   it('should render eight div element', () => {
     expect(wrapper.find('div')).toBePresent()
-    expect(wrapper.find('div').length).toEqual(8)
+    expect(wrapper.find('div').length).toEqual(7)
   })
 
 
   it('should render a div element with the description', () => {
-    expect(wrapper.find('.description').text()).toEqual('Description: This is a description')
+    expect(wrapper.find('.review-description').text()).toEqual('Description: This is a description')
   })
 
   it('should render a div element with rating 2', () => {

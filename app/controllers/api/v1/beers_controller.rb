@@ -7,7 +7,14 @@ class Api::V1::BeersController < ApplicationController
 
   def index
     beer_array = []
+    latest_beer = Beer.last
     beers = Beer.all.limit(22)
+    first_beer = beers.first
+    test_beers = beers.to_a
+    unless first_beer[:name] == latest_beer[:name]
+      beers = test_beers.unshift(latest_beer)
+    end
+
     beers.each do |beer|
 
       rating = 0

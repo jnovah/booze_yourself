@@ -21,7 +21,7 @@ class Api::V1::PayloadsController < ApplicationController
 
     brewery_id = ''
     type_id = ''
-    beer = ''
+    beer = {empty: 'no new beer'}
 
     if brewery_search_result.length == 0
       Brewery.create(name: brewery_search_value, website: payload[:brewery_website]);
@@ -38,10 +38,9 @@ class Api::V1::PayloadsController < ApplicationController
     end
 
     if beer_search_result.length == 0
-      Beer.create(name: beer_search_value, abv: payload[:abv], brewery_id: brewery_id, type_id: type_id);
+      Beer.create(name: beer_search_value, description: payload[:description], abv: payload[:abv], brewery_id: brewery_id, type_id: type_id);
       beer = Beer.last;
     end
-
     render json: beer
   end
 

@@ -25,7 +25,6 @@ class BeerForm extends Component {
   }
 
   handleSubmit(event) {
-    debugger
     event.preventDefault();
     let formPayLoad = {
       beer_name: this.state.beerName,
